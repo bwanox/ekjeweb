@@ -1,0 +1,83 @@
+/* Main section styling */
+@font-face {
+    font-family: 'Lastica';
+    src: url('../assets/fonts/lastica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.overview-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    padding: 2.08vw 5.21vw 5.21vw; /* Converted from 40px 100px 100px */
+}
+
+/* Overview content */
+.overview-content {
+    display: flex;
+    justify-content: space-between; /* Space between text and media content */
+    align-items: flex-start;
+    width: 100%;
+    margin-top: -1.04vw; /* Converted from -20px */
+}
+
+/* Text content styling */
+.text-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* Text styling */
+.starter-text {
+    font-size: 4.5vw; /* Converted from 4rem */
+    font-family: 'Lastica', sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.26vw; /* Converted from 5px */
+    color: #ffffff;
+}
+
+.added-text {
+    font-size: 2.5vw; /* Converted from 1.8rem */
+    font-family: 'Roboto', sans-serif;
+    color: #d5d5d5;
+    margin-top: 0.52vw; /* Converted from 10px */
+    font-weight: lighter;
+}
+
+/* Media content (SVG and GIF) */
+.media-content {
+    position: relative; /* Allows absolute positioning of the GIF */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align SVG and GIF to the right */
+    margin-top: -1.04vw; /* Converted from -20px */
+}
+
+/* WordStyle SVG */
+.wordstyle-svg {
+    position: relative; /* Keep SVG in normal flow */
+    z-index: 2; /* Place SVG above the GIF */
+}
+
+.svg-image {
+    width: 31.25vw; /* Converted from 600px */
+    height: auto;
+}
+
+/* GIF styling */
+.overview-gif {
+    position: absolute; /* Position GIF relative to .media-content */
+    top: 3.13vw; /* Converted from 60px */
+    z-index: 1; /* Place GIF below the SVG */
+    max-width: 26.04vw; /* Converted from 500px */
+    left: 0.16vw; /* Converted from 3px */
+}
+
+.gif-image {
+    width: 130%; /* This percentage-based size remains unchanged */
+    height: auto;
+    opacity: 0.8; /* Optional: add some transparency for a soft overlap effect */
+}

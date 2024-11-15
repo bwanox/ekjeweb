@@ -1,0 +1,133 @@
+/* Base styling for header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.04vw 1.56vw;
+}
+
+/* Header content (business name and logo) */
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+/* Business name styling */
+.business-name {
+    font-size: 2vw;
+    font-family: 'Lastica', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    margin-right: 1.04vw;
+    letter-spacing: 0.26vw;
+}
+
+/* Logo styling */
+.logo {
+    width: 4.17vw;
+    height: auto;
+}
+
+/* Navigation list styling */
+.nav-list {
+    display: flex;
+    gap: 1.04vw; /* Converted from 20px */
+    font-family: 'zingsansrust', sans-serif;
+    align-items: center; /* Align navigation links vertically */
+}
+
+.nav-list-item {
+    font-size: 2vw; /* Converted from 1.5rem */
+    color: #d5d5d5; /* Light gray text */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-list-item:hover {
+    color: #ff6600;
+}
+
+/* Mobile menu toggle (hamburger) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+/* Mobile menu when open */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(9px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-9px);
+}
+
+/* Media query for mobile devices (screen width 768px or below) */
+@media (max-width: 768px) {
+    /* Nav list hidden and styled as a dropdown when menuOpen is true */
+    .nav-list {
+        display: none; /* Hide the nav list by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 1.56vw;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list.open {
+        display: flex; /* Show the nav list when open */
+        z-index: 3;
+    }
+
+    .nav-list-item {
+        font-size: 3vw; /* Larger text for mobile */
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: flex; /* Show hamburger menu icon */
+    }
+}
+
+/* For larger screens (desktop view), keep regular nav list */
+@media (min-width: 769px) {
+    .nav-list {
+        display: flex; /* Display the regular navigation list */
+        gap: 1.04vw;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+}
+@font-face {
+    font-family: 'Lastica';
+    src: url('../assets/fonts/lastica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'zingsansrust';
+    src: url('../assets/fonts/Zingsansrust.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

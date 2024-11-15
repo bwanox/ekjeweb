@@ -1,0 +1,112 @@
+/* Main container */
+.aboutus-container {
+    display: flex;
+    flex-direction: column;
+    padding: 3vw 5vw; /* Converted from 60px */
+    max-width: auto; /* Converted from 1200px */
+    margin: 0 auto;
+}
+
+.aboutus-container > .text-container {
+    padding: 0 1vw; /* Converted from 50px */
+    max-width: auto; /* Converted from 800px */
+    text-align: start;
+    margin-bottom: 2.083vw; /* Converted from 40px */
+}
+
+/* Header styling */
+.title {
+    font-family: 'Lastica', sans-serif;
+    font-size: 6.25vw; /* Converted from 3rem (48px) */
+    font-weight: bold;
+    letter-spacing: 0.104vw; /* Converted from 2px */
+    color: #000;
+    margin-bottom: 0.521vw; /* Converted from 10px */
+}
+
+.description {
+    font-size: 2.5vw; /* Converted from 1.2rem (19.2px) */
+    color: #333;
+    line-height: 1.5; /* Line-height remains proportional */
+    margin-bottom: 2.083vw; /* Converted from 40px */
+}
+
+/* Cards container */
+.cards-container {
+    display: flex;
+    gap: 0.521vw; /* Converted from 10px */
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 0;
+}
+
+/* Individual card styling */
+.card {
+    border: 0.313vw solid #000; /* Converted from 6px */
+    border-radius: 2.604vw; /* Converted from 50px */
+    padding: 1.042vw; /* Converted from 20px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto; /* Percentage remains unchanged */
+    box-shadow: 0 0.208vw 0.417vw rgba(0, 0, 0, 0.1); /* Converted from 0 4px 8px */
+    text-align: center;
+    margin-right: 2.604vw; /* Converted from 50px */
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: #e3e3e3; /* Change background color on hover */
+    transform: scale(1.05); /* Scale remains the same */
+}
+
+.card:active {
+    transform: scale(1); /* Reset scale on click */
+}
+
+/* Card header for image and years */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.042vw; /* Converted from 20px */
+    margin-bottom: 0.521vw; /* Converted from 10px */
+}
+
+/* Card image styling */
+.card-image {
+    width: 20vw; /* Converted from 500px */
+    height: auto;
+    border-radius: 0.521vw; /* Converted from 10px */
+    object-fit: cover;
+    margin-right: 1.042vw; /* Converted from 20px */
+}
+
+/* Card years section */
+.card-years {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #000;
+    padding: 0.521vw; /* Converted from 10px */
+}
+
+.card-years-number {
+    font-size: 6vw; /* Converted from 4rem (64px) */
+    font-weight: bold;
+}
+
+.card-years-text {
+    font-size: 1.5vw; /* Converted from 1.2rem (19.2px) */
+    margin-top: 0.26vw; /* Converted from 5px */
+}
+
+/* Card description styling */
+.card-description {
+    font-size: 2vw; /* Converted from 1.6rem (25.6px) */
+    color: #333;
+    margin-top: 0.521vw; /* Converted from 10px */
+    line-height: 1.4; /* Line-height remains proportional */
+    align-self: start;
+}

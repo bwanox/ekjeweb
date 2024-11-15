@@ -1,0 +1,62 @@
+.Achievements-container {
+    text-align: center;
+    padding: 3.125vw; /* Converted from 60px */
+    background-color: #F2EFF4;
+}
+
+.Achievements-title {
+    font-size: 4vw; /* Converted from 2rem (32px) */
+    margin-bottom: 5vw; /* Converted from 2rem (32px) */
+    font-family: 'Lastica', 'sans-serif';
+    color: #b7b0ab;
+    text-align: start;
+}
+
+.images-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4vw; /* Converted from 2rem (32px) */
+    margin: 0 auto;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.image-description {
+    margin-top: 5.21vw; /* Converted from 1rem (16px) */
+    font-size: 2vw; /* Converted from 1.2rem (19.2px) */
+    font-weight: bold;
+    color: #333;
+    position: relative;
+}
+
+.image-description span {
+    display: inline-block;
+    font-size: 2vw; /* Converted from 1.5rem (24px) */
+    font-weight: bold;
+}
+
+.icon {
+    width: 30%; /* Percentage width remains unchanged */
+    height: auto;
+    margin-bottom: auto; /* Converted from 1rem (16px) */
+}
+
+/* Optional: Responsive design */
+@media (max-width: 768px) {
+    .images-container {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+}
+
+/* For better alignment and spacing on mobile */
+@media (max-width: 480px) {
+    .icon {
+        width: 10.42vw; /* Converted from 40px */
+        height: 10.42vw; /* Converted from 40px */
+    }
+}

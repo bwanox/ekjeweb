@@ -1,0 +1,31 @@
+.slidebar-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #012441;
+    padding: 0.52vw 0; /* Converted from 10px 0px */
+}
+
+.slidebar {
+    display: flex;
+    flex-direction: row;
+    animation: rotateWords 20s linear infinite;
+}
+
+.slidebar-item {
+    margin-right: 0.52vw; /* Converted from 10px */
+    font-size: 3vw; /* Converted from 2rem (32px) */
+    font-family: 'Lastacia', 'sans-serif';
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+/* Animation for rotating the words */
+@keyframes rotateWords {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Percentage remains unchanged */
+    }
+}

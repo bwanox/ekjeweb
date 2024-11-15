@@ -1,0 +1,102 @@
+/* Main container */
+.Services-container {
+    display: flex;
+    flex-direction: column;
+    padding: 3.125vw; /* Converted from 60px */
+    margin: 0 auto;
+    background-color: #E9E8EE;
+}
+
+.Services-container > .text-container {
+    padding: 0 1.563vw; /* Converted from 30px */
+    max-width: auto; /* Converted from 800px */
+    text-align: start;
+    margin-bottom: 2.083vw; /* Converted from 40px */
+}
+
+/* Header styling */
+.title {
+    font-family: 'Lastica', sans-serif;
+    font-size: 4vw; /* Converted from 3rem (48px) */
+    font-weight: bold;
+    letter-spacing: 0.104vw; /* Converted from 2px */
+    color: #000;
+    margin-bottom: 0.521vw; /* Converted from 10px */
+}
+
+.description {
+    font-size: 1.6vw; /* Converted from 1.2rem (19.2px) */
+    color: #333;
+    line-height: 1.5; /* Line-height remains proportional */
+    margin-bottom: 2.083vw; /* Converted from 40px */
+}
+
+/* Cards container */
+.service-cards-container {
+    display: flex;
+    gap: 0.26vw; /* Converted from 5px */
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 1.563vw; /* Converted from 30px */
+}
+
+/* Individual card styling */
+.service-card {
+    padding: 3.125vw 1.563vw; /* Converted from 60px 30px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%; /* Percentage width remains unchanged */
+    max-width: auto;
+    box-shadow: 0 0.208vw 0.417vw rgba(0, 0, 0, 0.1); /* Converted from 0 4px 8px */
+    text-align: center;
+    margin-right: 2.604vw; /* Converted from 50px */
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.card-link:hover {
+    background-color: #e3e3e3;
+    transform: scale(1.05);
+}
+
+.card-link:active {
+    transform: scale(1);
+}
+
+.service-card-title {
+    color: #b7b0ab;
+    font-family: 'Lastica', 'sans-serif';
+    font-size: 2vw;
+}
+
+/* Card header */
+.service-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.042vw; /* Converted from 20px */
+    margin-bottom: 1.042vw; /* Converted from 20px */
+}
+
+.card-link {
+    padding: 0.521vw; /* Converted from 10px */
+    border-radius: 1.563vw; /* Converted from 30px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    background-color: #012441;
+    color: #f9f9f9;
+    font-weight: bold;
+    text-align: center;
+    margin-top: auto; /* Push the link to the bottom */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.card-text {
+    color: #f9f9f9;
+    font-weight: bold;
+    font-size: 1vw;
+}

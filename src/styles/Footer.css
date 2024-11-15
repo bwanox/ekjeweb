@@ -1,0 +1,154 @@
+.footer-container {
+    background-color: #002855; /* Dark blue background */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 20px; /* Add padding for space */
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Ensure items are vertically centered */
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Allow elements to wrap in smaller screens */
+}
+
+.footer-logo-contact {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Add space between logo and contact */
+    margin-right: 30px; /* Space between logo-contact and social-media */
+    flex: 1;
+}
+
+.footer-logo {
+    width: 30%; /* Adjust size for better proportion */
+    height: auto;
+    margin-right: 100px;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the text */
+    margin-left: 20px; /* Add margin to give space from logo */
+}
+
+.footer-contact h4 {
+    font-size: 3rem; /* Adjust size for hierarchy */
+    font-family: 'Zing Sans Rust', sans-serif;
+    margin: 0;
+}
+
+.footer-email {
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 5px;
+    font-weight: 300; /* Lighter font weight */
+}
+
+.footer-email:hover {
+    color: #b7b0ab;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column; /* Ensure social media links stack vertically */
+    gap: 10px; /* Vertical spacing between social links */
+    align-items: center; /* Center the social media links */
+    flex: 1;
+}
+
+.footer-social h4 {
+    font-size: 1.5rem; /* Make title slightly bigger */
+    margin-bottom: 10px;
+    font-family: 'Zing Sans Rust', sans-serif;
+    font-weight: bold;
+}
+.social-links {
+    display: flex;
+    flex-direction: column; /* This ensures the links are displayed vertically */
+    gap: 10px; /* Adds space between each link */
+    align-items: center; /* Centers the links horizontally */
+}
+
+.social-links a {
+    display: inline-block;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.social-links a:hover {
+    color: #b7b0ab;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #b7b0ab; /* Subtle separator line */
+    padding-top: 20px;
+    flex-wrap: wrap; /* Ensure it adapts on smaller screens */
+}
+
+.footer-location a {
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-location a:hover {
+    color: #b7b0ab;
+}
+
+.footer-rights {
+    font-size: 0.9rem;
+    color: #b7b0ab;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensure this fits on small screens */
+    justify-content: flex-end; /* Align the rights section to the right */
+}
+
+.footer-rights span {
+    white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo-contact {
+        margin-bottom: 20px;
+        align-items: center;
+        gap: 10px;
+        flex: 0 1 100%;
+    }
+
+    .footer-contact {
+        text-align: center; /* Center the text on mobile */
+        margin-left: 0; /* Remove left margin for mobile */
+    }
+
+    .footer-social {
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-rights {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,132 @@
+/* Header styling */
+.header-service {
+    padding-bottom: 4vw;
+    margin-bottom: 2vw;
+    background: linear-gradient(145deg, #011238, #012441); /* Dark gradient */
+}
+
+/* Text container styling */
+.servicepage-text-container {
+    margin-top: 10vw;
+    text-align: center;
+    margin-bottom: 3vw;
+}
+
+.lead-text {
+    font-size: 4vw;
+    font-weight: bold;
+    font-family: 'lastica','sans-cheriff';
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.5vw;
+}
+
+.secondary-text {
+    font-size: 2vw;
+    color: #ffffff;
+    font-family: 'zingsansrust','sans-cheriff';
+}
+
+/* Service cards container */
+.service-page-cards-container {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    gap: 2vw; /* Space between cards */
+    align-items: flex-start; /* Align all cards to the left initially */
+    margin-bottom: 2vw;
+}
+
+/* Each service card styling */
+.service-page-card {
+    width: 60%; /* Make the cards take full width of the container */
+    padding: 2vw;
+    background: linear-gradient(to left,#D6DDEB,#D2D2D3);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card hover effect */
+.service-page-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Title inside the cards */
+.service-page-cardtitle {
+    font-size: 2vw;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: 'lastica','sans-cheriff';
+}
+
+/* Zig-zag effect using nth-child for alternating card positions */
+.service-page-card:nth-child(odd) {
+    align-self: flex-start; /* Odd cards align to the left */
+}
+
+.service-page-card:nth-child(even) {
+    align-self: flex-end; /* Even cards align to the right */
+}
+
+/* Make sure the cards are responsive */
+@media (max-width: 768px) {
+    .service-page-cards-container {
+        gap: 1.5rem;
+    }
+
+    .service-page-card {
+        width: 60%;
+        margin-bottom: 1.5vw;
+    }
+}
+
+/* Modal styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 60%;
+    max-width: 600px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    color: #000;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
