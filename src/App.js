@@ -13,6 +13,8 @@ const Contact = React.lazy(() => import('./components/Contact'));
 const Footer = React.lazy(() => import('./components/Footer'));
 const Overview = React.lazy(() => import('./components/Overview'));
 const Servicepage = React.lazy(() => import('./components/Servicepage'));
+const Teampage = React.lazy(() => import('./components/teampage'));
+
 
 // LazyLoadComponent to wrap components for lazy loading
 const LazyLoadComponent = ({ children }) => {
@@ -76,6 +78,14 @@ const App = () => {
             element={
               <Suspense fallback={<div>Loading Servicepage...</div>}>
                 <Servicepage />
+              </Suspense>
+            }
+          />
+          <Route 
+            path="/about" 
+            element={
+              <Suspense fallback={<div>Loading Servicepage...</div>}>
+                <Teampage />
               </Suspense>
             }
           />

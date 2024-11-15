@@ -1,0 +1,156 @@
+/* Header styling */
+.header-team {
+    padding-bottom: 4vw;
+    margin-bottom: 2vw;
+    background: linear-gradient(145deg, #011238, #012441); /* Dark gradient */
+}
+
+.teampage-text-container {
+    margin-top: 10vw;
+    text-align: center;
+    margin-bottom: 3vw;
+}
+
+.lead-text {
+    font-size: 4vw;
+    font-weight: bold;
+    font-family: 'lastica','sans-cheriff';
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.5vw;
+}
+
+.secondary-text {
+    font-size: 2vw;
+    color: #ffffff;
+    font-family: 'zingsansrust','sans-cheriff';
+}
+
+/* Cards container */
+.teampage-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2vw;
+    padding: 2vw;
+}
+
+/* Individual card styling */
+.teampage-card {
+    width: 250px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 1.5vw;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teampage-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card image wrapper */
+.teampage-card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* Maintain square aspect ratio */
+}
+
+/* Card image */
+.teampage-card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Overlay */
+.teampage-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 50%;
+}
+
+/* Show overlay on hover */
+.teampage-card-img-wrapper:hover .teampage-card-overlay {
+    opacity: 1;
+}
+
+/* Description in overlay */
+.teampage-card-description {
+    margin: 0;
+    font-size: 1vw;
+    text-align: center;
+    padding: 0.5vw 1vw;
+}
+
+/* LinkedIn link */
+.teampage-card-link {
+    margin-top: 0.5vw;
+    color: #1da1f2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.teampage-card-link:hover {
+    text-decoration: underline;
+}
+
+/* Member name */
+.teampage-card-name {
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: #333333;
+    margin: 0.5vw 0;
+}
+
+/* Member role */
+.teampage-card-role {
+    font-size: 1vw;
+    color: #777777;
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .teampage-cards-container {
+        gap: 1.5vw;
+        padding: 1.5vw;
+    }
+
+    .teampage-card {
+        width: 90%;
+        margin-bottom: 1.5vw;
+    }
+
+    .teampage-card-name {
+        font-size: 4vw;
+    }
+
+    .teampage-card-role {
+        font-size: 3vw;
+    }
+
+    .teampage-card-description {
+        font-size: 3vw;
+    }
+}
+    
