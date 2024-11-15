@@ -137,6 +137,9 @@
         text-align: center; /* Center the text on mobile */
         margin-left: 0; /* Remove left margin for mobile */
     }
+    .footer-contact h4,a{
+        font-size: larger;
+    }
 
     .footer-social {
         margin-bottom: 20px;
