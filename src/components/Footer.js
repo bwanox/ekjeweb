@@ -26,13 +26,12 @@ const Footer = () => {
 
             <div className="footer-bottom">
                 <div className="footer-location">
-                    <a href="https://goo.gl/maps/your-location-link" target="_blank" rel="noopener noreferrer">kenitra,morocco</a>
+                    <a href="https://maps.app.goo.gl/jYBr3Vxvrav2E1HH8" target="_blank" rel="noopener noreferrer">kenitra,morocco</a>
                 </div>
                 <div className="footer-rights">
                     <span>&copy; {new Date().getFullYear()} Ensakje. All rights reserved.</span>
-                    <span>Developped by bilal</span>
-                    <span>Designed by Bilal</span>
-                    <span>Codesigned by Med Josef</span>
+                    <span>Developped and Designed by bilal sahili</span>
+                    <span>Co-designed by Med Josef Qrayim</span>
                 </div>
             </div>
         </footer>

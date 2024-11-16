@@ -23,7 +23,7 @@ const Contact = () => {
     };
 
     const handleMapClick = () => {
-        alert('World map clicked!');
+        window.location.href = 'https://maps.app.goo.gl/jYBr3Vxvrav2E1HH8';
     };
 
     return (
