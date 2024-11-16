@@ -120,7 +120,6 @@
 }
 
 /* Responsive Design */
-/* Responsive Design */
 @media (max-width: 768px) {
     .footer-top {
         flex-direction: column;
@@ -128,10 +127,10 @@
     }
 
     .footer-logo-contact {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         align-items: center;
         gap: 10px;
-        flex: 0 1 100%;
+        flex: 1 1 auto;
     }
 
     .footer-contact {
@@ -140,7 +139,7 @@
     }
 
     /* Adjust the font sizes for mobile screens */
-    .footer-contact h4,a {
+    .footer-contact h4,.footer-contact a{
         font-size: 1.5rem; /* Smaller font size for mobile */
         line-height: 1.2; /* Adjust line height for better readability */
         word-wrap: break-word; /* Ensure text wraps correctly */
