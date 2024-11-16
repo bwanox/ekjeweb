@@ -2,70 +2,79 @@ import React from "react";
 import '../styles/Teampage.css';
 import Header from "./Header";
 import Footer from "./Footer";
+import youssefImg from "../assets/team/youssef.png";
+import bilalImg from "../assets/team/bilal.png";
+import younesImg from "../assets/team/younes.png";
+import yasmineImg from "../assets/team/yasmine.png";
+import malakImg from "../assets/team/malak.png";
+import salmaImg from "../assets/team/salma.png";
+import imanImg from "../assets/team/iman.png";
+import jadImg from "../assets/team/jad.png";
+import bahdouImg from "../assets/team/youness.png";
 
 const teamMembers = [
     {
         name: "Med Youssef Qraym",
         role: "President",
-        imgSrc: "path/to/president.jpg",
+        imgSrc: youssefImg,
         description: "Leading the team towards achieving goals and fostering collaboration.",
-        linkedin: "https://linkedin.com/in/med-youssef-qraym"
+        linkedin: "https://linkedin.com/in/mohamed-youssef-qrayim-116832209"
     },
     {
         name: "Bilal Sahili",
         role: "Technical Responsible",
-        imgSrc: "path/to/technical.jpg",
+        imgSrc: bilalImg,
         description: "Ensuring the technical aspects of the team run smoothly and innovatively.",
-        linkedin: "https://linkedin.com/in/bilal-sahili"
+        linkedin: "https://linkedin.com/in/bilal-sahili-50821b2ba"
     },
     {
         name: "Youness El Hard",
         role: "Prosperity Responsible",
-        imgSrc: "path/to/prosperity.jpg",
+        imgSrc: younesImg,
         description: "Managing financial strategies and ensuring team prosperity.",
-        linkedin: "https://linkedin.com/in/youness-el-hard"
+        linkedin: "https://linkedin.com/in/yuneselhard"
     },
     {
         name: "Yasmin Zouhir",
         role: "Secretary General",
-        imgSrc: "path/to/secretary.jpg",
+        imgSrc: yasmineImg,
         description: "Handling administrative tasks and maintaining organizational efficiency.",
-        linkedin: "https://linkedin.com/in/yasmin-zouhir"
+        linkedin: "https://linkedin.com/in/yasmine-zouhir-504b03264"
     },
     {
         name: "Malak Rahhali",
         role: "Treasurer",
-        imgSrc: "path/to/treasurer.jpg",
+        imgSrc: malakImg,
         description: "Overseeing budget planning and financial health of the team.",
         linkedin: "https://linkedin.com/in/malak-rahhali"
     },
     {
         name: "Salma Bouka",
         role: "Vice President",
-        imgSrc: "path/to/vice-president.jpg",
+        imgSrc: salmaImg,
         description: "Supporting the president in decision-making and team coordination.",
-        linkedin: "https://linkedin.com/in/salma-bouka"
+        linkedin: "https://linkedin.com/in/salma-bouka-926b802a3"
     },
     {
         name: "Iman Hajjou",
         role: "Events Responsible",
-        imgSrc: "path/to/events.jpg",
+        imgSrc: imanImg,
         description: "Organizing and managing team events with precision.",
         linkedin: "https://linkedin.com/in/iman-hajjou"
     },
     {
         name: "Med Jad Nouias",
         role: "Sponsoring Responsible",
-        imgSrc: "path/to/sponsoring.jpg",
+        imgSrc: jadImg,
         description: "Building partnerships and ensuring sponsorships for team activities.",
         linkedin: "https://linkedin.com/in/med-jad-nouias"
     },
     {
         name: "Youness Bahdou",
         role: "Media Responsible",
-        imgSrc: "path/to/media.jpg",
+        imgSrc: bahdouImg,
         description: "Managing media content and team communication strategies.",
-        linkedin: "https://linkedin.com/in/youness-bahdou"
+        linkedin: "https://linkedin.com/in/younes-bahddou-b7392b271"
     }
 ];
 
