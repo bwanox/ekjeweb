@@ -1,0 +1,13 @@
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensures it fills the parent container */
+  }
+  
+  .loading-gif {
+    width: 50px; /* Adjust size */
+    height: 50px;
+    object-fit: contain;
+  }
+  

@@ -3,12 +3,12 @@ import '../styles/Teampage.css';
 import Header from "./Header";
 import Footer from "./Footer";
 import youssefImg from "../assets/team/youssef.png";
-import bilalImg from "../assets/team/bilal.png";
+import bilalImg from "../assets/team/bilal.jpg";
 import younesImg from "../assets/team/younes.png";
 import yasmineImg from "../assets/team/yasmine.png";
 import malakImg from "../assets/team/malak.png";
 import salmaImg from "../assets/team/salma.png";
-import imanImg from "../assets/team/iman.png";
+import imanImg from "../assets/team/imane.jpg";
 import jadImg from "../assets/team/jad.png";
 import bahdouImg from "../assets/team/youness.png";
 

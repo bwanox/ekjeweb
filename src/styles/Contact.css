@@ -73,3 +73,38 @@ textarea {
 .send-button:hover {
     background-color: #001c40;
 }
+@media (max-width: 768px) {
+    .Contact-container {
+        flex-direction: column-reverse; /* Stack items vertically with the map below */
+        padding: 20px; /* Reduce padding for smaller screens */
+        align-items: flex-start; /* Center align items */
+        text-align: center; /* Center text and form */
+    }
+
+    .worldmap-image {
+        width: 100%; /* Allow the map to take full width */
+        margin-top: 20px; /* Add space between form and map */
+        opacity: 0.4; /* Slightly increase visibility for better balance */
+    }
+
+    .contact-content {
+        width: 100%; /* Make the contact form full-width */
+        margin-bottom: 20px; /* Add spacing between form and map */
+    }
+
+    .contact-title {
+        font-size: 1.8rem; /* Adjust font size for smaller screens */
+        margin-bottom: 1.5rem; /* Reduce margin */
+    }
+
+    input, textarea {
+        font-size: 14px; /* Slightly smaller text size for input fields */
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+
+    .send-button {
+        font-size: 16px; /* Slightly smaller button text */
+        padding: 8px 16px; /* Adjust button size for smaller screens */
+    }
+}
+

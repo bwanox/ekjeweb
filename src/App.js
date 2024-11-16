@@ -1,10 +1,9 @@
 import './App.css';
 import Header from './components/Header';
 import React, { Suspense } from 'react';
+import Loading from './components/Loading';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
-
-// Lazy-loaded components
 const AboutUs = React.lazy(() => import('./components/Aboutus'));
 const Services = React.lazy(() => import('./components/services'));
 const Achievements = React.lazy(() => import('./components/achievements'));
@@ -16,16 +15,18 @@ const Servicepage = React.lazy(() => import('./components/Servicepage'));
 const Teampage = React.lazy(() => import('./components/teampage'));
 
 
-// LazyLoadComponent to wrap components for lazy loading
+
 const LazyLoadComponent = ({ children }) => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
     <div ref={ref}>
       {inView ? (
-        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+        <Suspense fallback={<Loading />}>{children}</Suspense>
       ) : (
-        <div style={{ height: '300px' }}>Loading...</div>
+        <div style={{ height: '300px' }}>
+          <Loading />
+        </div>
       )}
     </div>
   );
@@ -41,13 +42,11 @@ const App = () => {
             element={
               <>
               <div className='mainview-container'>
-                {/* This will be shown on the Home Page */}
                 <Header />
-                <Suspense fallback={<div>Loading Overview...</div>}>
+                <Suspense fallback={<Loading />}>
                   <Overview />
                 </Suspense>
                 </div>
-                {/* Lazy-loaded components for other parts of the homepage */}
                 <LazyLoadComponent>
                   <AboutUs />
                 </LazyLoadComponent>
@@ -71,12 +70,11 @@ const App = () => {
           />
         </Routes>
 
-        {/* Routes for Service Page */}
         <Routes>
           <Route 
             path="/services" 
             element={
-              <Suspense fallback={<div>Loading Servicepage...</div>}>
+              <Suspense fallback={<Loading />}>
                 <Servicepage />
               </Suspense>
             }
@@ -84,7 +82,7 @@ const App = () => {
           <Route 
             path="/about" 
             element={
-              <Suspense fallback={<div>Loading Servicepage...</div>}>
+              <Suspense fallback={<Loading />}>
                 <Teampage />
               </Suspense>
             }
