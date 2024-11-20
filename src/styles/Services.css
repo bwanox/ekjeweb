@@ -2,55 +2,55 @@
 .Services-container {
     display: flex;
     flex-direction: column;
-    padding: 3.125vw; /* Converted from 60px */
+    padding: 3.75rem; /* Replaced from 3.125vw */
     margin: 0 auto;
     background-color: #E9E8EE;
 }
 
 .Services-container > .text-container {
-    padding: 0 1.563vw; /* Converted from 30px */
+    padding: 0 1.5rem; /* Replaced from 1.563vw */
     max-width: auto; /* Converted from 800px */
     text-align: start;
-    margin-bottom: 2.083vw; /* Converted from 40px */
+    margin-bottom: 2rem; /* Replaced from 2.083vw */
 }
 
 /* Header styling */
-.title {
+.Services-container > .text-container >.title {
     font-family: 'Lastica', sans-serif;
-    font-size: 4vw; /* Converted from 3rem (48px) */
+    font-size: 3rem; /* Replaced from 4vw */
     font-weight: bold;
-    letter-spacing: 0.104vw; /* Converted from 2px */
+    letter-spacing: 0.065rem; /* Replaced from 0.104vw */
     color: #000;
-    margin-bottom: 0.521vw; /* Converted from 10px */
+    margin-bottom: 0.325rem; /* Replaced from 0.521vw */
 }
 
 .description {
-    font-size: 1.6vw; /* Converted from 1.2rem (19.2px) */
+    font-size: 1rem; /* Replaced from 1.6vw */
     color: #333;
     line-height: 1.5; /* Line-height remains proportional */
-    margin-bottom: 2.083vw; /* Converted from 40px */
+    margin-bottom: 2rem; /* Replaced from 2.083vw */
 }
 
 /* Cards container */
 .service-cards-container {
     display: flex;
-    gap: 0.26vw; /* Converted from 5px */
+    gap: 0.2rem; /* Replaced from 0.26vw */
     flex-wrap: wrap;
     width: 100%;
-    padding: 0 1.563vw; /* Converted from 30px */
+    padding: 0 1rem; /* Replaced from 1.563vw */
 }
 
 /* Individual card styling */
 .service-card {
-    padding: 3.125vw 1.563vw; /* Converted from 60px 30px */
+    padding: 3.75rem 1.5rem; /* Replaced from 3.125vw 1.563vw */
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 25%; /* Percentage width remains unchanged */
     max-width: auto;
-    box-shadow: 0 0.208vw 0.417vw rgba(0, 0, 0, 0.1); /* Converted from 0 4px 8px */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* Replaced from 0 0.208vw 0.417vw */
     text-align: center;
-    margin-right: 2.604vw; /* Converted from 50px */
+    margin-right: 1.625rem; /* Replaced from 2.604vw */
     background-color: #f9f9f9;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
@@ -68,20 +68,20 @@
 .service-card-title {
     color: #b7b0ab;
     font-family: 'Lastica', 'sans-serif';
-    font-size: 2vw;
+    font-size: 1.25rem; /* Replaced from 2vw */
 }
 
 /* Card header */
 .service-card-header {
     display: flex;
     align-items: center;
-    gap: 1.042vw; /* Converted from 20px */
-    margin-bottom: 1.042vw; /* Converted from 20px */
+    gap: 1rem; /* Replaced from 1.042vw */
+    margin-bottom: 1rem; /* Replaced from 1.042vw */
 }
 
 .card-link {
-    padding: 0.521vw; /* Converted from 10px */
-    border-radius: 1.563vw; /* Converted from 30px */
+    padding: 0.325rem; /* Replaced from 0.521vw */
+    border-radius: 1.25rem; /* Replaced from 1.563vw */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,5 +98,17 @@
 .card-text {
     color: #f9f9f9;
     font-weight: bold;
-    font-size: 1vw;
+    font-size: 0.75rem; /* Replaced from 1vw */
+}
+@media (max-width: 480px) {
+    .Services-container{
+        padding: 1rem; /* Replaced from 3.125vw */
+
+    }
+    .Services-container >.text-container> .title{
+        font-size: 2.5rem;
+    }
+    .service-card{
+        width: 90%;
+    }
 }

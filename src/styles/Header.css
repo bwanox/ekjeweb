@@ -3,42 +3,49 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.04vw 1.56vw;
+    padding: 16px 24px; /* Using px for padding */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
 }
 
 /* Header content (business name and logo) */
 .header-content {
     display: flex;
     align-items: center;
+    flex-wrap: nowrap;
+    gap: 16px; /* Space between logo and business name */
 }
 
 /* Business name styling */
 .business-name {
-    font-size: 2vw;
+    font-size: 1.5rem; /* Converted from 2vw */
     font-family: 'Lastica', sans-serif;
     font-weight: bold;
     color: #ffffff;
-    margin-right: 1.04vw;
-    letter-spacing: 0.26vw;
+    margin-right: 16px; /* Using px for margin */
+    letter-spacing: 0.1em; /* Adjusted letter spacing */
+    white-space: nowrap;
 }
 
 /* Logo styling */
 .logo {
-    width: 4.17vw;
+    width: 60px; /* Using px for width */
     height: auto;
+    flex-shrink: 0;
 }
 
 /* Navigation list styling */
 .nav-list {
     display: flex;
-    gap: 1.04vw; /* Converted from 20px */
+    gap: 16px; /* Converted from 1.04vw */
     font-family: 'zingsansrust', sans-serif;
-    align-items: center; /* Align navigation links vertically */
+    align-items: center;
 }
 
 .nav-list-item {
-    font-size: 2vw; /* Converted from 1.5rem */
-    color: #d5d5d5; /* Light gray text */
+    font-size: 1.5rem; /* Converted from 2vw */
+    color: #d5d5d5;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -78,46 +85,53 @@
 
 /* Media query for mobile devices (screen width 768px or below) */
 @media (max-width: 768px) {
+    /* Stack header content vertically on small screens */
+    .header-container {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 12px 16px; /* Adjusted padding for mobile */
+    }
+
     /* Nav list hidden and styled as a dropdown when menuOpen is true */
     .nav-list {
-        display: none; /* Hide the nav list by default */
+        display: none;
         flex-direction: column;
         position: absolute;
         top: 60px;
-        right: 1.56vw;
+        right: 16px;
         background-color: #333;
-        padding: 10px;
+        padding: 12px;
         border-radius: 5px;
         width: 100%;
         text-align: center;
     }
 
     .nav-list.open {
-        display: flex; /* Show the nav list when open */
+        display: flex;
         z-index: 3;
     }
 
     .nav-list-item {
-        font-size: 3vw; /* Larger text for mobile */
-        padding: 10px 0;
+        font-size: 1rem; /* Larger text for mobile */
+        padding: 12px 0; /* Adjusted padding for mobile */
     }
 
     .menu-toggle {
-        display: flex; /* Show hamburger menu icon */
+        display: flex; /* Ensure it's displayed in the same row */
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        margin-top: 15px; /* Adjust vertical position here */
+    }
+    
+    .menu-toggle span {
+        width: 30px;
+        height: 4px;
+        background-color: #fff;
+        transition: transform 0.3s ease;
     }
 }
 
-/* For larger screens (desktop view), keep regular nav list */
-@media (min-width: 769px) {
-    .nav-list {
-        display: flex; /* Display the regular navigation list */
-        gap: 1.04vw;
-    }
-
-    .menu-toggle {
-        display: none;
-    }
-}
 @font-face {
     font-family: 'Lastica';
     src: url('../assets/fonts/lastica.ttf') format('truetype');

@@ -7,9 +7,9 @@ import bilalImg from "../assets/team/bilal.jpg";
 import younesImg from "../assets/team/younes.png";
 import yasmineImg from "../assets/team/yasmine.png";
 import malakImg from "../assets/team/malak.png";
-import salmaImg from "../assets/team/salma.png";
+import salmaImg from "../assets/team/salma.jpg";
 import imanImg from "../assets/team/imane.jpg";
-import jadImg from "../assets/team/jad.png";
+import jadImg from "../assets/team/jad.jpg";
 import bahdouImg from "../assets/team/youness.png";
 
 const teamMembers = [
@@ -17,63 +17,63 @@ const teamMembers = [
         name: "Med Youssef Qraym",
         role: "President",
         imgSrc: youssefImg,
-        description: "Leading the team towards achieving goals and fostering collaboration.",
+        description: "Diriger l'équipe vers l'atteinte des objectifs et favoriser la collaboration.",
         linkedin: "https://linkedin.com/in/mohamed-youssef-qrayim-116832209"
     },
     {
         name: "Bilal Sahili",
-        role: "Technical Responsible",
+        role: "Responsable Technique ",
         imgSrc: bilalImg,
-        description: "Ensuring the technical aspects of the team run smoothly and innovatively.",
+        description: "Assurer le bon fonctionnement et l'innovation des aspects techniques de l'équipe.",
         linkedin: "https://linkedin.com/in/bilal-sahili-50821b2ba"
     },
     {
         name: "Youness El Hard",
-        role: "Prosperity Responsible",
+        role: "Responsable Prospection ",
         imgSrc: younesImg,
-        description: "Managing financial strategies and ensuring team prosperity.",
+        description: "Gérer les stratégies financières et assurer la prospérité de l'équipe.",
         linkedin: "https://linkedin.com/in/yuneselhard"
     },
     {
         name: "Yasmin Zouhir",
-        role: "Secretary General",
+        role: "Secretaire Generale",
         imgSrc: yasmineImg,
-        description: "Handling administrative tasks and maintaining organizational efficiency.",
+        description: "Gérer les tâches administratives et maintenir l'efficacité organisationnelle.",
         linkedin: "https://linkedin.com/in/yasmine-zouhir-504b03264"
     },
     {
         name: "Malak Rahhali",
-        role: "Treasurer",
+        role: "Tresoriere",
         imgSrc: malakImg,
-        description: "Overseeing budget planning and financial health of the team.",
+        description: "Superviser la planification budgétaire et la santé financière de l'équipe.",
         linkedin: "https://linkedin.com/in/malak-rahhali"
     },
     {
         name: "Salma Bouka",
-        role: "Vice President",
+        role: "Vice Presidente",
         imgSrc: salmaImg,
-        description: "Supporting the president in decision-making and team coordination.",
+        description: "Soutenir le président dans la prise de décisions et la coordination de l'équipe",
         linkedin: "https://linkedin.com/in/salma-bouka-926b802a3"
     },
     {
         name: "Iman Hajjou",
-        role: "Events Responsible",
+        role: "Responsable Evenements ",
         imgSrc: imanImg,
-        description: "Organizing and managing team events with precision.",
+        description: "Organiser et gérer les événements de l'équipe avec précision.",
         linkedin: "https://linkedin.com/in/iman-hajjou"
     },
     {
         name: "Med Jad Nouias",
-        role: "Sponsoring Responsible",
+        role: "Responsable Sponsoring ",
         imgSrc: jadImg,
-        description: "Building partnerships and ensuring sponsorships for team activities.",
+        description: "Établir des partenariats et assurer les sponsors pour les activités de l'équipe.",
         linkedin: "https://linkedin.com/in/med-jad-nouias"
     },
     {
         name: "Youness Bahdou",
-        role: "Media Responsible",
+        role: "Responsable Media ",
         imgSrc: bahdouImg,
-        description: "Managing media content and team communication strategies.",
+        description: "Gérer le contenu médiatique et les stratégies de communication de l'équipe.",
         linkedin: "https://linkedin.com/in/younes-bahddou-b7392b271"
     }
 ];
@@ -85,8 +85,8 @@ const Teampage = () => {
             <div className="header-team">
                 <Header />
                 <div className="teampage-text-container">
-                    <h1 className="lead-text">Meet the Team</h1>
-                    <h2 className="secondary-text">Together, We Make It Happen</h2>
+                    <h1 className="lead-text">Rencontrez l'equipe</h1>
+                    <h2 className="secondary-text">Ensemble, nous le réalisons</h2>
                 </div>
             </div>
             <div className="teampage-cards-container">
@@ -97,7 +97,7 @@ const Teampage = () => {
                             <div className="teampage-card-overlay">
                                 <p className="teampage-card-description">{member.description}</p>
                                 <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="teampage-card-link">
-                                    View LinkedIn
+                                    Voir LinkedIn
                                 </a>
                             </div>
                         </div>

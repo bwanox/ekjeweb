@@ -1,63 +1,63 @@
 /* Header styling */
 .header-service {
-    padding-bottom: 4vw;
-    margin-bottom: 2vw;
+    padding-bottom: 2.5rem; /* Replaced from 4vw */
+    margin-bottom: 1.25rem; /* Replaced from 2vw */
     background: linear-gradient(145deg, #011238, #012441); /* Dark gradient */
 }
 
 /* Text container styling */
 .servicepage-text-container {
-    margin-top: 10vw;
+    margin-top: 6.25rem; /* Replaced from 10vw */
     text-align: center;
-    margin-bottom: 3vw;
+    margin-bottom: 1.875rem; /* Replaced from 3vw */
 }
 
 .lead-text {
-    font-size: 4vw;
+    font-size: 2.5rem; /* Replaced from 4vw */
     font-weight: bold;
-    font-family: 'lastica','sans-cheriff';
+    font-family: 'lastica','sans-serif';
     color: rgba(255, 255, 255, 0.6);
-    letter-spacing: 0.5vw;
+    letter-spacing: 0.3125rem; /* Replaced from 0.5vw */
 }
 
 .secondary-text {
-    font-size: 2vw;
+    font-size: 1.25rem; /* Replaced from 2vw */
     color: #ffffff;
-    font-family: 'zingsansrust','sans-cheriff';
+    font-family: 'zingsansrust','sans-serif';
 }
 
 /* Service cards container */
 .service-page-cards-container {
     display: flex;
     flex-direction: column; /* Stack cards vertically */
-    gap: 2vw; /* Space between cards */
+    gap: 1.25rem; /* Replaced from 2vw */
     align-items: flex-start; /* Align all cards to the left initially */
-    margin-bottom: 2vw;
+    margin-bottom: 1.25rem; /* Replaced from 2vw */
 }
 
 /* Each service card styling */
 .service-page-card {
-    width: 60%; /* Make the cards take full width of the container */
-    padding: 2vw;
-    background: linear-gradient(to left,#D6DDEB,#D2D2D3);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%; /* Keep the cards taking full width of the container */
+    padding: 1.25rem; /* Replaced from 2vw */
+    background: linear-gradient(to left, #D6DDEB, #D2D2D3);
+    border-radius: 0.5rem; /* Replaced from 8px */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Replaced from 0 4px 8px */
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Card hover effect */
 .service-page-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.625rem); /* Replaced from -10px */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* Replaced from 0 8px 16px */
 }
 
 /* Title inside the cards */
 .service-page-cardtitle {
-    font-size: 2vw;
+    font-size: 1.25rem; /* Replaced from 2vw */
     font-weight: bold;
     color: #ffffff;
-    font-family: 'lastica','sans-cheriff';
+    font-family: 'lastica','sans-serif';
 }
 
 /* Zig-zag effect using nth-child for alternating card positions */
@@ -69,17 +69,7 @@
     align-self: flex-end; /* Even cards align to the right */
 }
 
-/* Make sure the cards are responsive */
-@media (max-width: 768px) {
-    .service-page-cards-container {
-        gap: 1.5rem;
-    }
 
-    .service-page-card {
-        width: 60%;
-        margin-bottom: 1.5vw;
-    }
-}
 
 /* Modal styling */
 .modal-overlay {
@@ -106,18 +96,18 @@
 .modal {
     background: #fff;
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: 0.75rem; /* Replaced from 12px */
     width: 60%;
-    max-width: 600px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 37.5rem; /* Replaced from 600px */
+    box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.1); /* Replaced from 0 10px 20px */
     position: relative;
     transition: transform 0.3s ease;
 }
 
 .close-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0.625rem; /* Replaced from 10px */
+    right: 0.625rem; /* Replaced from 10px */
     background: none;
     color: #000;
     border: none;
@@ -129,4 +119,22 @@
     font-size: 1rem;
     color: #333;
     line-height: 1.5;
+}
+@media (max-width: 768px) {
+    .header-service {
+        flex-direction: column; /* Stack everything vertically */
+        justify-content: flex-start; /* Align to the top */
+        align-items: center; /* Center content horizontally */
+        height: auto; /* Full viewport height */
+        padding: 5vw; /* Consistent padding for mobile */
+    }
+
+
+    .text-content {
+        text-align: center; /* Center-align text for mobile */
+    }
+
+    .lead-text{
+        font-size: 2.4rem;
+    }
 }

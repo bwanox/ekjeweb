@@ -129,13 +129,17 @@
     .footer-logo-contact {
         margin-bottom: 20px;
         align-items: center;
-        gap: 10px;
         flex: 0 1 100%;
+        gap: 0px; /* Add space between logo and contact */
+        flex-direction: column;
+
     }
+    
 
     .footer-contact {
         text-align: center; /* Center the text on mobile */
-        margin-left: 0; /* Remove left margin for mobile */
+        margin: 0;
+
     }
 
     /* Adjust the font sizes for mobile screens */
@@ -146,7 +150,7 @@
     }
 
     .footer-email {
-        font-size: 1rem; /* Adjust email font size */
+        font-size: 1.2rem; /* Adjust email font size */
         word-wrap: break-word; /* Ensure text wraps correctly */
     }
 
@@ -165,5 +169,10 @@
         justify-content: center;
         text-align: center; /* Center-align text for mobile */
         gap: 10px; /* Reduce gap between rights items */
+    }
+    .footer-logo {
+        width: 70%; /* Adjust size for better proportion */
+        height: auto;
+        margin: 0;    
     }
 }

@@ -32,20 +32,20 @@ const Achievements = () => {
 
     return (
         <div className='Achievements-container'>
-            <h1 className='Achievements-title'>
-                YOU CAN COUNT ON US
+            <h1 className='Achievements-title'>     
+                VOUS POUVEZ COMPTER SUR NOUS
             </h1>
             <div className='images-container'>
                 <div className='image-container'>
                     <MoneybagIcon alt='Revenue icon' className="icon" />
                     <span className='image-description'>
-                        <span>{revenue}+ </span>of revenue
+                        <span>{revenue}+ </span>De revenu
                     </span>
                 </div>
                 <div className='image-container'>
                     <PartnershipsIcon alt='Partnerships icon' className="icon" />
                     <span className='image-description'>
-                        <span>{partnerships}+ </span>partnerships
+                        <span>{partnerships}+ </span>Partenariats
                     </span>
                 </div>
                 <div className='image-container'>

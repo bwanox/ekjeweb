@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: flex-start;
     color: white;
-    padding: 2.08vw 5.21vw 5.21vw; /* Converted from 40px 100px 100px */
+    padding: 8rem 3.125rem 3.125rem; /* Converted from 2.08vw 5.21vw 5.21vw */
 }
 
 /* Overview content */
@@ -20,7 +20,7 @@
     justify-content: space-between; /* Space between text and media content */
     align-items: flex-start;
     width: 100%;
-    margin-top: -1.04vw; /* Converted from -20px */
+    margin-top: -0.625rem; /* Converted from -1.04vw */
 }
 
 /* Text content styling */
@@ -28,22 +28,23 @@
     display: flex;
     flex-direction: column;
     text-align: left;
+    padding-top: 20px;
 }
 
 /* Text styling */
 .starter-text {
-    font-size: 4.5vw; /* Converted from 4rem */
+    font-size: 2.875rem; /* Converted from 4.5vw */
     font-family: 'Lastica', sans-serif;
     font-weight: bold;
-    letter-spacing: 0.26vw; /* Converted from 5px */
+    letter-spacing: 0.16rem; /* Converted from 0.26vw */
     color: #ffffff;
 }
 
 .added-text {
-    font-size: 2.5vw; /* Converted from 1.8rem */
+    font-size: 1.563rem; /* Converted from 2.5vw */
     font-family: 'Roboto', sans-serif;
     color: #d5d5d5;
-    margin-top: 0.52vw; /* Converted from 10px */
+    margin-top: 0.325rem; /* Converted from 0.52vw */
     font-weight: lighter;
 }
 
@@ -53,7 +54,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end; /* Align SVG and GIF to the right */
-    margin-top: -1.04vw; /* Converted from -20px */
+    margin-top: -0.625rem; /* Converted from -1.04vw */
 }
 
 /* WordStyle SVG */
@@ -63,21 +64,77 @@
 }
 
 .svg-image {
-    width: 31.25vw; /* Converted from 600px */
+    width: 30rem; /* Converted from 31.25vw */
     height: auto;
 }
 
 /* GIF styling */
 .overview-gif {
     position: absolute; /* Position GIF relative to .media-content */
-    top: 3.13vw; /* Converted from 60px */
+    top: 1.75rem; /* Converted from 3.13vw */
     z-index: 1; /* Place GIF below the SVG */
-    max-width: 26.04vw; /* Converted from 500px */
-    left: 0.16vw; /* Converted from 3px */
+    max-width: 25rem; /* Converted from 26.04vw */
+    left: 0.1rem; /* Converted from 0.16vw */
 }
 
 .gif-image {
     width: 130%; /* This percentage-based size remains unchanged */
     height: auto;
     opacity: 0.8; /* Optional: add some transparency for a soft overlap effect */
+}
+
+/* MOBILE DESIGN - ONLY FOR SCREENS LESS THAN 768px */
+/* Mobile-specific design */
+@media (max-width: 768px) {
+    .overview-section {
+        flex-direction: column; /* Stack everything vertically */
+        justify-content: flex-start; /* Align to the top */
+        align-items: center; /* Center content horizontally */
+        height: 100vh; /* Full viewport height */
+        padding: 5vw; /* Consistent padding for mobile */
+    }
+
+    .overview-content {
+        flex-direction: column-reverse; /* Place texts below media */
+        align-items: center; /* Center-align for mobile */
+        margin-top: 0;
+    }
+
+    /* Media (GIF and SVG) at the top */
+    .media-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%; /* Ensure it spans the full container width */
+        margin-bottom: 5vw; /* Space below the media */
+    }
+
+    .wordstyle-svg {
+        position: relative;
+        z-index: 2; /* Keep SVG above the GIF */
+        width: 20rem; /* Converted from 70vw */
+        margin-bottom: -20rem; /* Converted from -10vw */
+    }
+
+    .overview-gif {
+        position: relative; /* Follow normal flow */
+        z-index: 1; /* Place below SVG */
+        width: 18rem; /* Converted from 80vw */
+        height: auto; /* Maintain aspect ratio */
+        opacity: 0.9; /* Optional: Slight transparency */
+    }
+
+    .text-content {
+        text-align: start; /* Center-align text for mobile */
+    }
+
+    .starter-text {
+        font-size: 2.2rem; /* Converted from 6vw */
+        margin-bottom: 1.2rem; /* Converted from 2vw */
+    }
+
+    .added-text {
+        font-size: 1.4rem; /* Converted from 4vw */
+    }
 }

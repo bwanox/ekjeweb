@@ -1,12 +1,12 @@
 .Achievements-container {
     text-align: center;
-    padding: 3.125vw; /* Converted from 60px */
+    padding: 3.75rem; /* Replaced from 3.125vw (60px) */
     background-color: #F2EFF4;
 }
 
 .Achievements-title {
-    font-size: 4vw; /* Converted from 2rem (32px) */
-    margin-bottom: 5vw; /* Converted from 2rem (32px) */
+    font-size: 2rem; /* Replaced from 4vw (32px) */
+    margin-bottom: 2rem; /* Replaced from 5vw (32px) */
     font-family: 'Lastica', 'sans-serif';
     color: #b7b0ab;
     text-align: start;
@@ -15,7 +15,7 @@
 .images-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 4vw; /* Converted from 2rem (32px) */
+    gap: 2rem; /* Replaced from 4vw (32px) */
     margin: 0 auto;
 }
 
@@ -27,8 +27,8 @@
 }
 
 .image-description {
-    margin-top: 5.21vw; /* Converted from 1rem (16px) */
-    font-size: 2vw; /* Converted from 1.2rem (19.2px) */
+    margin-top: 1rem; /* Replaced from 5.21vw (16px) */
+    font-size: 1.25rem; /* Replaced from 2vw (19.2px) */
     font-weight: bold;
     color: #333;
     position: relative;
@@ -36,14 +36,14 @@
 
 .image-description span {
     display: inline-block;
-    font-size: 2vw; /* Converted from 1.5rem (24px) */
+    font-size: 1.5rem; /* Replaced from 2vw (24px) */
     font-weight: bold;
 }
 
 .icon {
-    width: 25%; /* Percentage width remains unchanged */
+    width: 6.25rem; /* Replaced from 25% */
     height: auto;
-    margin-bottom: auto; /* Converted from 1rem (16px) */
+    margin-bottom: 1rem; /* Replaced from 1rem (16px) */
 }
 
 /* Optional: Responsive design */
@@ -56,7 +56,10 @@
 /* For better alignment and spacing on mobile */
 @media (max-width: 480px) {
     .icon {
-        width: 10.42vw; /* Converted from 40px */
-        height: 10.42vw; /* Converted from 40px */
+        width: 6.5rem; /* Replaced from 10.42vw (40px) */
+        height: 6.5rem; /* Replaced from 10.42vw (40px) */
+    }
+    .Achievements-title{
+        font-size: 1.5rem;
     }
 }

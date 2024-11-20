@@ -10,9 +10,9 @@ const AboutUs = () => {
     return (
         <div className="aboutus-container">
             <div className="text-container">
-                <h1 className="title">Get to know us</h1>
+                <h1 className="title">Decouvrez-nous</h1>
                 <p className="description">
-                    ekje is a team of very hard-working students who enjoy making connections and are inspired to make the world better by...
+                    
                 </p>
             </div>
             <div className="cards-container">
@@ -24,10 +24,12 @@ const AboutUs = () => {
                         <img src={ensaklogo} alt="ENSA" className="card-image" />
                         <div className="card-years">
                             <span className="card-years-number">+16</span>
-                            <span className="card-years-text">years of success</span>
+                            <span className="card-years-text">Années de succès</span>
                         </div>
                     </div>
-                    <p className="card-description">make my life and yours better</p>
+                    <p className="card-description">L'École Nationale des Sciences Appliquées de Kénitra 
+                        se distingue par son excellence académique et son engagement à former des ingénieurs de haut niveau, 
+                        prêts à relever les défis technologiques du futur.</p>
                 </div>
                 
                 <div
@@ -38,10 +40,13 @@ const AboutUs = () => {
                         <img src={ensaklogo} alt="CJEM" className="card-image" />
                         <div className="card-years">
                             <span className="card-years-number">+8</span>
-                            <span className="card-years-text">years of guidance</span>
+                            <span className="card-years-text">Années de conseils</span>
                         </div>
                     </div>
-                    <p className="card-description">make my life and yours better</p>
+                    <p className="card-description">La Conférence des Junior-Entreprises du Maroc (CJEM) est un événement remarquable qui met en lumière l'innovation, 
+                        l'entrepreneuriat et le leadership des jeunes talents marocains, 
+                        créant ainsi des opportunités exceptionnelles pour le développement professionnel des étudiants.
+                        </p>
                 </div>
             </div>
         </div>

@@ -8,8 +8,8 @@ const Overview = () => {
         <section className="overview-section">
             <div className="overview-content">
                 <div className="text-content">
-                    <h1 className="starter-text">Lead Your Project with Passion</h1>
-                    <h2 className="added-text">Every step forward is a step to success</h2>
+                    <h1 className="starter-text">Menez votre projet avec passion</h1>
+                    <h2 className="added-text">Chaque étape en avant est une étape vers le succès</h2>
                 </div>
                 
                 <div className="media-content">

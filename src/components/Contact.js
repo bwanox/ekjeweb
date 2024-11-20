@@ -36,38 +36,38 @@ const Contact = () => {
             />
             <div className="contact-content">
                 <div className="contact-text-container">
-                    <h1 className='contact-title'>Get in touch with us</h1>
+                    <h1 className='contact-title'>Contactez-nous</h1>
                 </div>
                 <div className="contact-form">
                     <form ref={form} onSubmit={sendEmail}>
                         <input 
                             type="text" 
                             name="company" 
-                            placeholder="Company name" 
+                            placeholder="Nom de l'entreprise" 
                             required 
                             className="company-input"
                         />
                         <input 
                             type="text"
                             name="user_name"
-                            placeholder="Name" 
+                            placeholder="Nom" 
                             required 
                             className="name-input"
                         />
                         <input 
                             type="email" 
                             name="user_email" 
-                            placeholder="Your email address" 
+                            placeholder="votre address mail" 
                             required 
                             className="email-input"
                         />
                         <textarea 
                             name="message" 
-                            placeholder="Your message" 
+                            placeholder="Votre message" 
                             required 
                             className="message-input"
                         ></textarea>
-                        <button type="submit" className="send-button">Send</button>
+                        <button type="submit" className="send-button">Envoyer</button>
                     </form>
                 </div>
             </div>

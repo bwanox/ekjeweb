@@ -13,8 +13,10 @@ const Header = () => {
   return (
     <header className="header-container">
       <div className="header-content">
+      <Link to='/' className="header-content">
         <img src={logo} alt="EKJE logo" className="logo" />
         <h1 className="business-name">EKJE</h1>
+        </Link>
       </div>
       <div className={`menu-toggle ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
         <span></span>
@@ -22,8 +24,8 @@ const Header = () => {
         <span></span>
       </div>
       <nav className={`nav-list ${menuOpen ? 'open' : ''}`} aria-label="Primary Navigation">
-        <Link to="/" className="nav-list-item" aria-label="Home">Home</Link>
-        <Link to="/about" className="nav-list-item" aria-label="About Us">About Us</Link>
+        <Link to="/" className="nav-list-item" aria-label="Home">Accueil</Link>
+        <Link to="/about" className="nav-list-item" aria-label="About Us">À propos de nous</Link>
         <Link to="/services" className="nav-list-item" aria-label="Our Services">Services</Link>
         <Link to="/contact" className="nav-list-item" aria-label="Contact Us">Contact</Link>
       </nav>

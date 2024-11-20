@@ -22,8 +22,8 @@ const Servicepage = () => {
             <div className="header-service">
                 <Header />
                 <div className="servicepage-text-container">
-                    <h1 className="lead-text">Unleash Your Potential</h1>
-                    <h2 className="secondary-text">Realize Your Dreams with Us</h2>
+                    <h1 className="lead-text">Liberez Votre Potentiel</h1>
+                    <h2 className="secondary-text">Réalisez Vos Rêves Avec Nous</h2>
                 </div>
             </div>
             <div className="service-page-cards-container">
