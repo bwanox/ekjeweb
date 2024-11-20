@@ -34,7 +34,7 @@
 /* Cards container */
 .service-cards-container {
     display: flex;
-    gap: 0.2rem; /* Replaced from 0.26vw */
+    gap: 0.6rem; /* Replaced from 0.26vw */
     flex-wrap: wrap;
     width: 100%;
     padding: 0 1rem; /* Replaced from 1.563vw */
@@ -54,6 +54,7 @@
     background-color: #f9f9f9;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+    margin-bottom: 5rem;
 }
 
 .card-link:hover {
@@ -108,7 +109,9 @@
     .Services-container >.text-container> .title{
         font-size: 2.5rem;
     }
+
     .service-card{
         width: 90%;
+        
     }
 }
