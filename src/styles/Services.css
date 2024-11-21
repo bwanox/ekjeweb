@@ -104,6 +104,8 @@
 @media (max-width: 480px) {
     .Services-container{
         padding: 1rem; /* Replaced from 3.125vw */
+        max-width: 100vw; /* Prevent width overflow */
+        overflow-x: hidden; 
 
     }
     .Services-container >.text-container> .title{

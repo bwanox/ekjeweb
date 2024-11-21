@@ -1,3 +1,7 @@
 .mainview-container {
   background: linear-gradient(145deg, #011238, #012441); /* Dark gradient */
 }
+.app-container{
+  max-width: 100vw; /* Prevent width overflow */
+  overflow-x: hidden; 
+}
