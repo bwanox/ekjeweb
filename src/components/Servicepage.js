@@ -27,7 +27,12 @@ const Servicepage = () => {
                 </div>
             </div>
             <div className="service-page-cards-container">
-                <div className="service-page-card" onClick={() => openModal('Web development is the backbone of modern online businesses.')}>
+                <div className="service-page-card" onClick={() => openModal('Web development is the backbone of modern online businesses.
+                 It’s not just about creating a website; it’s about crafting digital experiences that captivate and engage. 
+                I specialize in building interactive, visually stunning websites tailored to your unique needs. Whether you're looking for a sleek business portfolio, 
+                an engaging e-commerce platform, or a dynamic interactive site, I bring your vision to life.
+
+Beyond development, I offer hosting solutions and comprehensive website maintenance, ensuring your site runs smoothly, securely, and efficiently. From optimizing performance to implementing the latest features, I handle it all so you can focus on your business. Let’s transform your online presence into something extraordinary!')}>
                     <h1 className="service-page-cardtitle">Web Development</h1>
                 </div>
                 <div className="service-page-card" onClick={() => openModal('Software development focuses on building robust applications that power businesses.')}>
