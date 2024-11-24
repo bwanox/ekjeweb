@@ -4,6 +4,8 @@ import React, { Suspense } from 'react';
 import Loading from './components/Loading';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
+import Lottie from 'react-lottie-player';
+import animationData from './assets/animationstripes2.json'; 
 const AboutUs = React.lazy(() => import('./components/Aboutus'));
 const Services = React.lazy(() => import('./components/services'));
 const Achievements = React.lazy(() => import('./components/achievements'));
@@ -42,6 +44,15 @@ const App = () => {
             element={
               <>
               <div className='mainview-container'>
+              <div className="lottie-wrapper">
+                    <Lottie
+                      animationData={animationData}
+                      play
+                      loop
+                      speed={0.6}
+                      className="background-lottie"
+                    />
+                  </div>
                 <Header />
                 <Suspense fallback={<Loading />}>
                   <Overview />
