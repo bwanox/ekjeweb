@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from "react";
 import '../styles/Achievements.css';
 import { ReactComponent as MoneybagIcon } from '../assets/moneybag.svg';
 import { ReactComponent as SatisfactionIcon } from '../assets/satisfaction.svg';
@@ -29,9 +29,41 @@ const Achievements = () => {
         startCount(setMembers, 50);
         startCount(setSatisfaction, 95);
     }, []);
+    const [isVisible, setIsVisible] = useState(false); // Track visibility
+    const achievementsRef = useRef(null); // Reference to the Achievements container
+
+    // Observer to detect when the section comes into or leaves the view
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true); // Section enters the viewport
+                    } else {
+                        setIsVisible(false); // Section leaves the viewport
+                    }
+                });
+            },
+            { threshold: 0.5 } // Trigger when 50% of the section is in view
+        );
+
+        if (achievementsRef.current) {
+            observer.observe(achievementsRef.current); // Start observing the section
+        }
+
+        // Cleanup observer when component unmounts
+        return () => {
+            if (achievementsRef.current) {
+                observer.unobserve(achievementsRef.current);
+            }
+        };
+    }, []);
 
     return (
-        <div className='Achievements-container'>
+        <div 
+            className={`Achievements-container ${isVisible ? 'visible' : ''}`} 
+            ref={achievementsRef}
+        >
             <h1 className='Achievements-title'>     
                 VOUS POUVEZ COMPTER SUR NOUS
             </h1>
@@ -63,6 +95,7 @@ const Achievements = () => {
             </div>
         </div>
     );
+    
 };
 
 export default Achievements;

@@ -1,31 +1,49 @@
-
-.mainview-container { 
-    position: relative;  
-      z-index: 1;  
-        overflow: hidden; 
-      }
-.app-container{
-  max-width: 100vw; /* Prevent width overflow */
-  overflow-x: hidden; 
-}
-.lottie-wrapper {
-  position: absolute;
-  width: 100%;
+/* Ensure the sections take full height */
+html, body {
+  margin: 0;
+  padding: 0;
   height: 100%;
-  z-index: -1;
-  pointer-events: none;
+  overflow: hidden; /* Prevent unintended scrolling */
+}
+
+.app-container {
   display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ensure full height for the app container */
+  width: 100vw; /* Ensure full width */
+  background-image: url('./assets/background-gif.gif'); /* Path to your GIF */
+  background-size: cover; /* Ensure the background fills the area */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sections-container {
+  flex: 1; /* Fill available space after the header */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section {
+  display: none; /* Hidden by default */
+  height: 100%; /* Ensure sections take full height */
+  width: 100%;
+}
+
+.section.active {
+  display: block; /* Reveal when active */
+}
+
+header {
+  height: auto;
+  flex-shrink: 0; /* Prevent shrinking */
+  width: 100%;
+}
+
+.mainview-container {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.lottie-wrapper .background-lottie{
-  transform-origin: center;
-  transform: scale(1); /* Default scale for larger screens */
-}
-
-@media (max-width: 768px) {
-  .lottie-wrapper .background-lottie{
-    transform: scale(5); /* Increase or decrease the scale for smaller screens */
-  }
+  height: 100%;
 }

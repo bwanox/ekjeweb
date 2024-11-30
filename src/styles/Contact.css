@@ -1,39 +1,108 @@
+/* Contact container styling */
 .Contact-container {
     display: flex;
-    flex-direction: row-reverse; /* Reverse the row order (map on the right) */
-    justify-content: space-between; /* Space items evenly */
+    flex-direction: row-reverse;
+    justify-content: space-between;
     align-items: flex-start;
     padding: 40px;
-    background-color: #f7f7f7;
     position: relative;
+    color: white;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(30px); /* Start slightly below */
+    animation: slideIn 1.5s ease-out forwards, fadeIn 1.5s ease-out forwards;
 }
 
+/* Slide In and Fade In Animation */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Start from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
+/* Fade In Animation for smooth visibility */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Map styling */
 .worldmap-image {
-    width: 40%; /* Adjust width of the map */
+    width: 40%;
     height: auto;
-    opacity: 0.3;
+    opacity: 0.4;
     z-index: 1;
     cursor: pointer;
-    object-fit: cover; /* Maintain aspect ratio */
-    background-color: rgb(0,0,0,0.5);
+    object-fit: cover;
+    transform: scale(0.95); /* Initially slightly smaller */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
 }
 
+/* Hover effect to size up */
+.worldmap-image:hover {
+    transform: scale(1.05); /* Slightly larger on hover */
+    opacity: 0.7; /* Optional: Increase visibility */
+}
+
+/* Scale In animation for map */
+@keyframes mapScaleIn {
+    0% {
+        transform: scale(0.95); /* Start small */
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1); /* Scale to normal size */
+        opacity: 0.3; /* Keep the opacity steady */
+    }
+}
+
+/* Contact content styling */
 .contact-content {
     z-index: 2;
     display: flex;
-    flex-direction: column; /* Stack the title and form vertically */
-    width: 55%; /* Adjust width of the form container */
+    flex-direction: column;
+    width: 55%;
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start from below */
+    animation: fadeInUp 1.5s ease-out forwards, contentSlideUp 1.5s ease-out forwards;
 }
 
-.contact-text-container {
-    margin-bottom: 20px;
+/* Fade In Up for contact form */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+/* Slide Up for content */
+@keyframes contentSlideUp {
+    0% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Contact title and form adjustments */
 .contact-title {
     font-size: 2rem;
     margin-bottom: 2rem;
     font-family: 'Lastica', 'sans-serif';
-    color: #b7b0ab;
+    color: #ffffff;
 }
 
 .contact-form {
@@ -47,12 +116,12 @@ input, textarea {
     padding: 10px;
     margin-bottom: 20px;
     border: none;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #ffffff;
     background-color: transparent;
     outline: none;
     font-size: 16px;
     font-weight: bold;
-    color: #000;
+    color: #ffffff;
 }
 
 textarea {
@@ -73,38 +142,47 @@ textarea {
 .send-button:hover {
     background-color: #001c40;
 }
+
+/* MOBILE DESIGN - ONLY FOR SCREENS LESS THAN 768px */
 @media (max-width: 768px) {
     .Contact-container {
-        flex-direction: column-reverse; /* Stack items vertically with the map below */
-        padding: 20px; /* Reduce padding for smaller screens */
-        align-items: flex-start; /* Center align items */
-        text-align: center; /* Center text and form */
+        flex-direction: column-reverse;
+        padding: 20px;
+        align-items: flex-start;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: slideIn 1.5s ease-out forwards, fadeIn 1.5s ease-out forwards;
     }
 
     .worldmap-image {
-        width: 100%; /* Allow the map to take full width */
-        margin-top: 20px; /* Add space between form and map */
-        opacity: 0.4; /* Slightly increase visibility for better balance */
+        width: 100%;
+        margin-top: 20px;
+        opacity: 0.4;
+        transform: scale(0.95); /* Keep the scale effect for mobile */
+        animation: mapScaleIn 1.5s ease-out forwards;
     }
 
     .contact-content {
-        width: 100%; /* Make the contact form full-width */
-        margin-bottom: 20px; /* Add spacing between form and map */
+        width: 100%;
+        margin-bottom: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1.5s ease-out forwards, contentSlideUp 1.5s ease-out forwards;
     }
 
     .contact-title {
-        font-size: 1.8rem; /* Adjust font size for smaller screens */
-        margin-bottom: 1.5rem; /* Reduce margin */
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
     }
 
     input, textarea {
-        font-size: 14px; /* Slightly smaller text size for input fields */
-        padding: 8px; /* Adjust padding for smaller screens */
+        font-size: 14px;
+        padding: 8px;
     }
 
     .send-button {
-        font-size: 16px; /* Slightly smaller button text */
-        padding: 8px 16px; /* Adjust button size for smaller screens */
+        font-size: 16px;
+        padding: 8px 16px;
     }
 }
-

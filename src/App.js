@@ -1,104 +1,77 @@
 import './App.css';
 import Header from './components/Header';
-import React, { Suspense } from 'react';
-import Loading from './components/Loading';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useInView } from 'react-intersection-observer';
-import Lottie from 'react-lottie-player';
-import animationData from './assets/animationstripes2.json'; 
-const AboutUs = React.lazy(() => import('./components/Aboutus'));
-const Services = React.lazy(() => import('./components/services'));
-const Achievements = React.lazy(() => import('./components/achievements'));
-const Slidebar = React.lazy(() => import('./components/slidebar'));
-const Contact = React.lazy(() => import('./components/Contact'));
-const Footer = React.lazy(() => import('./components/Footer'));
-const Overview = React.lazy(() => import('./components/Overview'));
-const Servicepage = React.lazy(() => import('./components/Servicepage'));
-const Teampage = React.lazy(() => import('./components/teampage'));
-
-
-
-const LazyLoadComponent = ({ children }) => {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
-
-  return (
-    <div ref={ref}>
-      {inView ? (
-        <Suspense fallback={<Loading />}>{children}</Suspense>
-      ) : (
-        <div style={{ height: '300px' }}>
-          <Loading />
-        </div>
-      )}
-    </div>
-  );
-};
+import React, { useRef, useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Overview from './components/Overview';
+import AboutUs from './components/Aboutus';
+import Services from './components/services';
+import Achievements from './components/achievements';
+import Slidebar from './components/slidebar';
+import Contact from './components/Contact'
+import Footer from './components/Footer';
+import Verticalscroll from './components/verticalscroll';
 
 const App = () => {
+  const [activeSection, setActiveSection] = useState("overview");
+
+  const sectionRefs = {
+    overview: useRef(null),
+    aboutUs: useRef(null),
+    services: useRef(null),
+    achievements: useRef(null),
+    contact: useRef(null),
+  };
+
+  const handleSectionChange = (section) => {
+    setActiveSection(section);
+  };
+
   return (
     <Router>
       <div className="app-container">
-        <Routes>
-          <Route 
-            path="/" 
-            element={
-              <>
-              <div className='mainview-container'>
-              <div className="lottie-wrapper">
-                    <Lottie
-                      animationData={animationData}
-                      play
-                      loop
-                      speed={0.6}
-                      className="background-lottie"
-                    />
-                  </div>
-                <Header />
-                <Suspense fallback={<Loading />}>
-                  <Overview />
-                </Suspense>
-                </div>
-                <LazyLoadComponent>
-                  <AboutUs />
-                </LazyLoadComponent>
-                <LazyLoadComponent>
-                  <Services />
-                </LazyLoadComponent>
-                <LazyLoadComponent>
-                  <Achievements />
-                </LazyLoadComponent>
-                <LazyLoadComponent>
-                  <Slidebar />
-                </LazyLoadComponent>
-                <LazyLoadComponent>
-                  <Contact />
-                </LazyLoadComponent>
-                <LazyLoadComponent>
-                  <Footer />
-                </LazyLoadComponent>
-              </>
-            }
-          />
-        </Routes>
-
-        <Routes>
-          <Route 
-            path="/services" 
-            element={
-              <Suspense fallback={<Loading />}>
-                <Servicepage />
-              </Suspense>
-            }
-          />
-          <Route 
-            path="/about" 
-            element={
-              <Suspense fallback={<Loading />}>
-                <Teampage />
-              </Suspense>
-            }
-          />
-        </Routes>
+        <Verticalscroll
+          sectionRefs={sectionRefs}
+          activeSection={activeSection}
+          onSectionChange={handleSectionChange}
+        />
+        <Header />
+        <div className="sections-container">
+          <div
+            className="section"
+            ref={sectionRefs.overview}
+            style={{ display: activeSection === "overview" ? "block" : "none" }}
+          >
+            <Overview />
+          </div>
+          <div
+            className="section"
+            ref={sectionRefs.aboutUs}
+            style={{ display: activeSection === "aboutUs" ? "block" : "none" }}
+          >
+            <AboutUs />
+          </div>
+          <div
+            className="section"
+            ref={sectionRefs.services}
+            style={{ display: activeSection === "services" ? "block" : "none" }}
+          >
+            <Services />
+          </div>
+          <div
+            className="section"
+            ref={sectionRefs.achievements}
+            style={{ display: activeSection === "achievements" ? "block" : "none" }}
+          >
+            <Achievements />
+          </div>
+          <div
+            className="section"
+            ref={sectionRefs.contact}
+            style={{ display: activeSection === "contact" ? "block" : "none" }}
+          >
+            <Contact />
+          </div>
+        </div>
       </div>
     </Router>
   );

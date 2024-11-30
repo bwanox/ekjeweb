@@ -11,16 +11,41 @@
     justify-content: center;
     align-items: flex-start;
     color: white;
-    padding: 8rem 3.125rem 3.125rem; /* Converted from 2.08vw 5.21vw 5.21vw */
+    padding: 8rem 3.125rem 3.125rem;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Start from a slightly lower position */
+    animation: fadeInUp 1.5s ease-out forwards, scaleUp 1.5s ease-out forwards; /* Apply both effects */
+}
+
+/* Fade In and Slide Up Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scaling effect */
+@keyframes scaleUp {
+    0% {
+        transform: translateY(50px) scale(0.9); /* Start smaller */
+    }
+    100% {
+        transform: translateY(0) scale(1); /* End at normal size */
+    }
 }
 
 /* Overview content */
 .overview-content {
     display: flex;
-    justify-content: space-between; /* Space between text and media content */
+    justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    margin-top: -0.625rem; /* Converted from -1.04vw */
+    margin-top: -0.625rem;
 }
 
 /* Text content styling */
@@ -29,76 +54,79 @@
     flex-direction: column;
     text-align: left;
     padding-top: 20px;
+    width: 70%;
 }
 
 /* Text styling */
 .starter-text {
-    font-size: 2.875rem; /* Converted from 4.5vw */
+    font-size: 3.5rem;
     font-family: 'Lastica', sans-serif;
     font-weight: bold;
-    letter-spacing: 0.16rem; /* Converted from 0.26vw */
+    letter-spacing: 0.16rem;
     color: #ffffff;
 }
 
 .added-text {
-    font-size: 1.563rem; /* Converted from 2.5vw */
+    font-size: 2rem;
     font-family: 'Roboto', sans-serif;
     color: #d5d5d5;
-    margin-top: 0.325rem; /* Converted from 0.52vw */
+    margin-top: 0.325rem;
     font-weight: lighter;
 }
 
 /* Media content (SVG and GIF) */
 .media-content {
-    position: relative; /* Allows absolute positioning of the GIF */
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Align SVG and GIF to the right */
-    margin-top: -0.625rem; /* Converted from -1.04vw */
+    align-items: flex-end;
+    margin-top: -0.625rem;
 }
 
 /* WordStyle SVG */
 .wordstyle-svg {
-    position: relative; /* Keep SVG in normal flow */
-    z-index: 2; /* Place SVG above the GIF */
+    position: relative;
+    z-index: 2;
 }
 
 .svg-image {
-    width: 30rem; /* Converted from 31.25vw */
+    width: 30rem;
     height: auto;
 }
 
 /* GIF styling */
 .overview-gif {
-    position: absolute; /* Position GIF relative to .media-content */
-    top: 1.75rem; /* Converted from 3.13vw */
-    z-index: 1; /* Place GIF below the SVG */
-    max-width: 25rem; /* Converted from 26.04vw */
-    left: 0.1rem; /* Converted from 0.16vw */
+    position: absolute;
+    top: 1.75rem;
+    z-index: 1;
+    max-width: 25rem;
+    left: 0.1rem;
 }
 
 .gif-image {
-    width: 130%; /* This percentage-based size remains unchanged */
+    width: 130%;
     height: auto;
-    opacity: 0.8; /* Optional: add some transparency for a soft overlap effect */
+    opacity: 0.8;
 }
 
 /* MOBILE DESIGN - ONLY FOR SCREENS LESS THAN 768px */
-/* Mobile-specific design */
 @media (max-width: 768px) {
     .overview-section {
-        flex-direction: column; /* Stack everything vertically */
-        justify-content: flex-start; /* Align to the top */
-        align-items: center; /* Center content horizontally */
-        height: auto; /* Full viewport height */
-        padding: 5vw; /* Consistent padding for mobile */
-        max-width: 100vw; /* Prevent width overflow */
-        overflow-x: hidden; 
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: auto;
+        padding: 5vw;
+        max-width: 100vw;
+        overflow-x: hidden;
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeInUp 1.5s ease-out forwards, scaleUp 1.5s ease-out forwards;
     }
 
     .overview-content {
-        flex-direction: column-reverse; /* Place texts below media */
-        align-items: center; /* Center-align for mobile */
+        flex-direction: column-reverse;
+        align-items: center;
         margin-top: 0;
     }
 
@@ -108,39 +136,38 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%; /* Ensure it spans the full container width */
-        margin-bottom: 5vw; /* Space below the media */
+        width: 100%;
+        margin-bottom: 5vw;
         justify-content: center;
         margin: 0 auto;
         margin-left: -50px;
-       
     }
 
     .wordstyle-svg {
         position: relative;
-        z-index: 2; /* Keep SVG above the GIF */
-        width: 20rem; /* Converted from 70vw */
-        margin-bottom: -20rem; /* Converted from -10vw */
+        z-index: 2;
+        width: 20rem;
+        margin-bottom: -20rem;
     }
 
     .overview-gif {
-        position: relative; /* Follow normal flow */
-        z-index: 1; /* Place below SVG */
-        width: 18rem; /* Converted from 80vw */
-        height: auto; /* Maintain aspect ratio */
-        opacity: 0.9; /* Optional: Slight transparency */
+        position: relative;
+        z-index: 1;
+        width: 18rem;
+        height: auto;
+        opacity: 0.9;
     }
 
     .text-content {
-        text-align: start; /* Center-align text for mobile */
+        text-align: start;
     }
 
     .starter-text {
-        font-size: 2.2rem; /* Converted from 6vw */
-        margin-bottom: 1.2rem; /* Converted from 2vw */
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem;
     }
 
     .added-text {
-        font-size: 1.4rem; /* Converted from 4vw */
+        font-size: 1.4rem;
     }
 }

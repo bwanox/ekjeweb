@@ -1,21 +1,31 @@
+/* Initially, make the section invisible and slightly off-screen */
 .Achievements-container {
     text-align: center;
-    padding: 3.75rem; /* Replaced from 3.125vw (60px) */
-    background-color: #F2EFF4;
+    padding: 3rem;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(30px); /* Slide in from below */
+    transition: opacity 1s ease, transform 1s ease; /* Transition for fade and slide-up */
 }
 
+/* When the section is visible, apply the transition */
+.Achievements-container.visible {
+    opacity: 1;
+    transform: translateY(0); /* Slide to its original position */
+}
+
+/* Other styles */
 .Achievements-title {
-    font-size: 2rem; /* Replaced from 4vw (32px) */
-    margin-bottom: 2rem; /* Replaced from 5vw (32px) */
-    font-family: 'Lastica', 'sans-serif';
-    color: #b7b0ab;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Lastica', sans-serif;
+    color: #ffffff;
     text-align: start;
 }
 
 .images-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem; /* Replaced from 4vw (32px) */
+    gap: 2rem;
     margin: 0 auto;
 }
 
@@ -27,23 +37,23 @@
 }
 
 .image-description {
-    margin-top: 1rem; /* Replaced from 5.21vw (16px) */
-    font-size: 1.25rem; /* Replaced from 2vw (19.2px) */
+    margin-top: 1rem;
+    font-size: 1.25rem;
     font-weight: bold;
-    color: #333;
+    color: #ffffff;
     position: relative;
 }
 
 .image-description span {
     display: inline-block;
-    font-size: 1.5rem; /* Replaced from 2vw (24px) */
+    font-size: 2rem;
     font-weight: bold;
 }
 
 .icon {
-    width: 6.25rem; /* Replaced from 25% */
+    width: 8rem;
     height: auto;
-    margin-bottom: 1rem; /* Replaced from 1rem (16px) */
+    margin-bottom: 1rem;
 }
 
 /* Optional: Responsive design */
@@ -53,13 +63,12 @@
     }
 }
 
-/* For better alignment and spacing on mobile */
 @media (max-width: 480px) {
     .icon {
-        width: 6.5rem; /* Replaced from 10.42vw (40px) */
-        height: 6.5rem; /* Replaced from 10.42vw (40px) */
+        width: 6.5rem;
+        height: 6.5rem;
     }
-    .Achievements-title{
+    .Achievements-title {
         font-size: 1.5rem;
     }
 }

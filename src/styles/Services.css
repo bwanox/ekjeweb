@@ -2,15 +2,24 @@
 .Services-container {
     display: flex;
     flex-direction: column;
-    padding: 3.75rem; /* Replaced from 3.125vw */
+    padding: 3.75rem;
     margin: 0 auto;
-    background-color: #E9E8EE;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(30px); /* Slightly offset for a slide effect */
+    transition: opacity 3s ease, transform 3s ease; /* Transition for fade and slide-in */
 }
+
+/* When the section is visible, we animate it to full opacity */
+.Services-container.visible {
+    opacity: 1;
+    transform: translateY(0); /* Slide up */
+}
+
 
 .Services-container > .text-container {
     padding: 0 1.5rem; /* Replaced from 1.563vw */
     max-width: auto; /* Converted from 800px */
-    text-align: start;
+    text-align: center;
     margin-bottom: 2rem; /* Replaced from 2.083vw */
 }
 
@@ -20,13 +29,14 @@
     font-size: 3rem; /* Replaced from 4vw */
     font-weight: bold;
     letter-spacing: 0.065rem; /* Replaced from 0.104vw */
-    color: #000;
+    color: #ffffff;
     margin-bottom: 0.325rem; /* Replaced from 0.521vw */
 }
 
 .description {
+    display: none;
     font-size: 1rem; /* Replaced from 1.6vw */
-    color: #333;
+    color: #ffffff;
     line-height: 1.5; /* Line-height remains proportional */
     margin-bottom: 2rem; /* Replaced from 2.083vw */
 }
@@ -51,9 +61,8 @@
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* Replaced from 0 0.208vw 0.417vw */
     text-align: center;
     margin-right: 1.625rem; /* Replaced from 2.604vw */
-    background-color: #f9f9f9;
+    background-color: transparent; /* Set to transparent */
     transition: all 0.3s ease-in-out;
-    cursor: pointer;
     margin-bottom: 5rem;
 }
 
@@ -66,20 +75,37 @@
     transform: scale(1);
 }
 
-.service-card-title {
-    color: #b7b0ab;
-    font-family: 'Lastica', 'sans-serif';
-    font-size: 1.25rem; /* Replaced from 2vw */
-}
-
-/* Card header */
+/* Positioning logo on top of title */
 .service-card-header {
     display: flex;
+    flex-direction: column; /* Stack logo above the title */
     align-items: center;
-    gap: 1rem; /* Replaced from 1.042vw */
+    gap: 0.5rem; /* Reduced gap for closer positioning */
     margin-bottom: 1rem; /* Replaced from 1.042vw */
 }
 
+.service-card-logo {
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    z-index: 2; /* Ensures the logo stays on top */
+    transition: transform 0.3s ease; /* Added transition for smooth enlargement */
+}
+
+.service-card-logo:hover {
+    transform: scale(1.2); /* Enlarge the logo on hover */
+}
+
+.service-card-title {
+    font-size: 2rem; /* Replaced from 2vw */
+    color: #b7b0ab;
+    font-family: 'Lastica', 'sans-serif';
+    position: relative;
+    z-index: 1; /* Ensures the title stays below the logo */
+}
+
+/* Card link styling */
 .card-link {
     padding: 0.325rem; /* Replaced from 0.521vw */
     border-radius: 1.25rem; /* Replaced from 1.563vw */
@@ -101,12 +127,12 @@
     font-weight: bold;
     font-size: 0.75rem; /* Replaced from 1vw */
 }
+
 @media (max-width: 480px) {
     .Services-container{
         padding: 1rem; /* Replaced from 3.125vw */
         max-width: 100vw; /* Prevent width overflow */
         overflow-x: hidden; 
-
     }
     .Services-container >.text-container> .title{
         font-size: 2.5rem;
@@ -114,6 +140,5 @@
 
     .service-card{
         width: 90%;
-        
     }
 }
