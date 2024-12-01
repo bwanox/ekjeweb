@@ -43,7 +43,7 @@
 .service-cards-container {
     display: flex;
     gap: 0.6rem;
-    justify-content: centerg;
+    justify-content: center;
     flex-wrap: nowrap; /* Ensure the items don't wrap */
     width: 100%;
     overflow-x: auto; /* Enable horizontal scrolling */

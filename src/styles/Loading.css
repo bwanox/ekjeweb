@@ -3,11 +3,17 @@
     justify-content: center;
     align-items: center;
     height: 100%; /* Ensures it fills the parent container */
+    top: 50%;
+    left: 50%;
   }
   
   .loading-gif {
-    width: 50px; /* Adjust size */
-    height: 50px;
+    width: 400px; /* Adjust size */
+    height: 400px;
     object-fit: contain;
+
+  }
+  body{
+    background-color: black;
   }
   
