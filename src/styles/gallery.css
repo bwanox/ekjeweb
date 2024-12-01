@@ -7,42 +7,187 @@
   color: white;
   font-family: 'Lastica', sans-serif;
   font-size: 1.5rem;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
+/* circular desin*/
 .gallery {
-    position: absolute; /* Absolute positioning to allow centering */
-    top: 40%; /* Move to the vertical center */
-    left: 40%; /* Move to the horizontal center */
-    transform: translate(-50%, -50%) preserve-3d; /* Offset the element's position and preserve 3D effects */
-    width: 300px;
-    height: 200px;
-    transform-style: preserve-3d;
-    animation: rotate 60s linear infinite;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  --s: 200px; 
+  --g: 8px;   
+  
+  display: grid;
+  grid: auto-flow var(--s)/repeat(2,var(--s));
+  gap: var(--g);
+}
+.gallery > img {
+  width: 100%; 
+  aspect-ratio: 1;
+  cursor: pointer;
+  filter: grayscale();
+  z-index: 0;
+  transition: .25s,z-index 0s .25s;
+}
+.gallery > img:hover {
+  width: calc(200% + var(--g));
+  filter: grayscale(0);
+  z-index: 1;
+  --_c: 50%;
+  transition: .4s,z-index 0s;
+}
+.gallery > img:nth-child(1){
+  clip-path: circle(var(--_c,55% at 70% 70%));
+  place-self: start;
+}
+.gallery > img:nth-child(2){
+  clip-path: circle(var(--_c,55% at 30% 70%));
+  place-self: start end;
+}
+.gallery > img:nth-child(3){
+  clip-path: circle(var(--_c,55% at 70% 30%));
+  place-self: end start;
+}
+.gallery > img:nth-child(4){
+  clip-path: circle(var(--_c,55% at 30% 30%));
+  place-self: end;
+}
+@media (max-width: 480px ){
+  .gallery-text-container{
+    font-size: 1rem;
+    
+  }
 }
 
-  
-  @keyframes rotate{
-    from{
-      transform:perspective(1200px) rotateY(0deg);
-    }
-    
-    to{
-      transform:perspective(1200px) rotateY(360deg);
-    }
-  }
-  
-  .gallery span{
-    position:absolute;
-    width:100%;
-    height:100%;
-    transform-origin:center;
-    transform-style:preserve-3d;
-    transform:rotateY(calc(var(--i) * 45deg)) translateZ(380px);
-  }
-  
-.gallery span img{
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
+/*
+.gallery{
+  display: flex;
+  justify-content: center;
 }
+.gallery-ul {
+  width: 100%;
+  height: 70vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr 2fr 1fr);
+  overflow: hidden;
+}
+
+.gallery-li {
+  width: 100%;
+  height: 100%;
+  grid-row: 1 / span 1;
+
+  --offsetX: 50%;
+}
+
+.gallery-a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-li:first-of-type {
+  grid-column: 1 / span 4;
+  
+  clip-path: polygon(calc(20% * -1) 100%, calc(20%) 0, 100% 0, calc(20% * 3) 100%);
+}
+
+.gallery-li:nth-of-type(2) {
+  grid-column: 3 / span 5;
+  
+  clip-path: polygon(0 100%, calc(16.6% * 2) 0, 100% 0, calc(16.6% * 4) 100%);
+}
+
+.gallery-li:nth-of-type(3) {
+  grid-column: 6 / span 5;
+  
+  clip-path: polygon(0 100%, calc(16.6% * 2) 0, 100% 0, calc(16.6% * 4) 100%);
+}
+
+.gallery-li:last-of-type {
+  grid-column: -5 / span 4;
+  
+  clip-path: polygon(0 100%, calc(20% * 2) 0, calc(20% * 6) 0, calc(20% * 4) 100%);
+}
+
+
+.gallery-li:nth-of-type(odd) .gallery-a {
+  transform: translate(calc(var(--offsetX) * -2 * 0.166), var(--offsetX));
+  animation: o 2s;
+}
+
+.gallery-li:nth-of-type(even) .gallery-a {
+  transform: translate(calc(var(--offsetX) * 2 * 0.166), calc(var(--offsetX) * -1));
+  animation: o 2s;
+}
+
+.gallery-li:first-of-type .gallery-a {
+  transform: translate(calc(var(--offsetX) * -2 * 0.200), var(--offsetX));
+}
+
+.gallery-li:last-of-type .gallery-a {
+  transform: translate(calc(var(--offsetX) * 2 * 0.200), calc(var(--offsetX) * -1));
+}
+
+.gallery-img {
+  animation: blr 2s;
+  filter: blur(10px);
+}
+
+@keyframes blr {
+  from {
+    filter: blur(0);
+  }
+}
+
+
+.gallery-li {
+  transition: opacity 0.3s;
+}
+.gallery-li .gallery-a {
+  transition: all 0.15s;
+}
+.gallery-li:hover .gallery-a {
+  transition: transform 0.3s;
+  transform: translate(0);
+}
+
+.gallery-ul:hover .gallery-li {
+  opacity: 0.1;
+}
+.gallery-ul:hover .gallery-li:hover {
+  opacity: 1;
+  transition: clip-path 0.4s 0.3s;
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+  z-index: 10;
+}
+
+.gallery-img {
+  filter: blur(10px);
+  transition: filter 0.7s;
+}
+.gallery-li:hover img {
+  filter: blur(0);
+}
+@media (max-width: 480px ){
+  .gallery-text-container{
+    font-size: 1rem;
+    
+  }
+  .gallery-ul {
+    width: 100%;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr 2fr 1fr);
+    overflow: hidden;
+  }
+}
+*/
+
