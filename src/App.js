@@ -29,12 +29,28 @@ const App = () => {
   };
 
   useEffect(() => {
-    // Simulate a delay for loading (e.g., API calls or component initialization)
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000); // Adjust the duration as needed
+    // Preload the background image
+    const preloadImage = (src) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+    };
 
-    return () => clearTimeout(timer); // Cleanup on unmount
+    // Path to your background image
+    const backgroundImageSrc = './assets/background-gif.gif';
+
+    // Wait for the background image to load
+    preloadImage(backgroundImageSrc)
+      .then(() => {
+        setIsLoading(false); // Set loading to false once the image is loaded
+      })
+      .catch((error) => {
+        console.error('Failed to load background image:', error);
+        setIsLoading(false); // Still proceed if there's an error
+      });
   }, []);
 
   if (isLoading) {
@@ -48,63 +64,61 @@ const App = () => {
           <Route
             path="/"
             element={
-              <>
-                <div className="first-page">
-                  <Verticalscroll
-                    sectionRefs={sectionRefs}
-                    activeSection={activeSection}
-                    onSectionChange={handleSectionChange}
-                  />
-                  <Header />
-                  <div className="sections-container">
-                    <div
-                      className="section"
-                      ref={sectionRefs.overview}
-                      style={{
-                        display: activeSection === "overview" ? "block" : "none",
-                      }}
-                    >
-                      <Overview />
-                    </div>
-                    <div
-                      className="section"
-                      ref={sectionRefs.aboutUs}
-                      style={{
-                        display: activeSection === "aboutUs" ? "block" : "none",
-                      }}
-                    >
-                      <AboutUs />
-                    </div>
-                    <div
-                      className="section"
-                      ref={sectionRefs.services}
-                      style={{
-                        display: activeSection === "services" ? "block" : "none",
-                      }}
-                    >
-                      <Services />
-                    </div>
-                    <div
-                      className="section"
-                      ref={sectionRefs.gallery}
-                      style={{
-                        display: activeSection === "gallery" ? "block" : "none",
-                      }}
-                    >
-                      <Gallery />
-                    </div>
-                    <div
-                      className="section"
-                      ref={sectionRefs.contact}
-                      style={{
-                        display: activeSection === "contact" ? "block" : "none",
-                      }}
-                    >
-                      <Contact />
-                    </div>
+              <div className="first-page">
+                <Verticalscroll
+                  sectionRefs={sectionRefs}
+                  activeSection={activeSection}
+                  onSectionChange={handleSectionChange}
+                />
+                <Header />
+                <div className="sections-container">
+                  <div
+                    className="section"
+                    ref={sectionRefs.overview}
+                    style={{
+                      display: activeSection === "overview" ? "block" : "none",
+                    }}
+                  >
+                    <Overview />
+                  </div>
+                  <div
+                    className="section"
+                    ref={sectionRefs.aboutUs}
+                    style={{
+                      display: activeSection === "aboutUs" ? "block" : "none",
+                    }}
+                  >
+                    <AboutUs />
+                  </div>
+                  <div
+                    className="section"
+                    ref={sectionRefs.services}
+                    style={{
+                      display: activeSection === "services" ? "block" : "none",
+                    }}
+                  >
+                    <Services />
+                  </div>
+                  <div
+                    className="section"
+                    ref={sectionRefs.gallery}
+                    style={{
+                      display: activeSection === "gallery" ? "block" : "none",
+                    }}
+                  >
+                    <Gallery />
+                  </div>
+                  <div
+                    className="section"
+                    ref={sectionRefs.contact}
+                    style={{
+                      display: activeSection === "contact" ? "block" : "none",
+                    }}
+                  >
+                    <Contact />
                   </div>
                 </div>
-              </>
+              </div>
             }
           />
           <Route path="/services" element={<Servicepage />} />
