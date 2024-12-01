@@ -29,8 +29,9 @@ const Verticalscroll = ({ sectionRefs, activeSection, onSectionChange }) => {
 
     const touchMoveY = event.touches[0].clientY;
     const deltaY = startTouchY - touchMoveY;
+    const scrollThreshold = 80; 
 
-    if (Math.abs(deltaY) > 30) {
+    if (Math.abs(deltaY) > scrollThreshold) {
       if (deltaY > 0) {
         scrollToSection(sections[Math.min(sections.indexOf(activeSection) + 1, sections.length - 1)]);
       } else {
