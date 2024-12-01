@@ -4,64 +4,65 @@
     flex-direction: column;
     padding: 3.75rem;
     margin: 0 auto;
-    opacity: 0; /* Initially hidden */
-    transform: translateY(30px); /* Slightly offset for a slide effect */
-    transition: opacity 3s ease, transform 3s ease; /* Transition for fade and slide-in */
+    opacity: 1;
+    transform: translateY(30px);
+    transition: opacity 3s ease, transform 3s ease;
 }
 
 /* When the section is visible, we animate it to full opacity */
 .Services-container.visible {
     opacity: 1;
-    transform: translateY(0); /* Slide up */
+    transform: translateY(0);
 }
-
 
 .Services-container > .text-container {
-    padding: 0 1.5rem; /* Replaced from 1.563vw */
-    max-width: auto; /* Converted from 800px */
+    padding: 0 1.5rem;
+    max-width: auto;
     text-align: center;
-    margin-bottom: 2rem; /* Replaced from 2.083vw */
+    margin-bottom: 2rem;
 }
 
-/* Header styling */
-.Services-container > .text-container >.title {
+.Services-container > .text-container > .title {
     font-family: 'Lastica', sans-serif;
-    font-size: 3rem; /* Replaced from 4vw */
+    font-size: 3rem;
     font-weight: bold;
-    letter-spacing: 0.065rem; /* Replaced from 0.104vw */
+    letter-spacing: 0.065rem;
     color: #ffffff;
-    margin-bottom: 0.325rem; /* Replaced from 0.521vw */
+    margin-bottom: 0.325rem;
 }
 
 .description {
     display: none;
-    font-size: 1rem; /* Replaced from 1.6vw */
+    font-size: 1rem;
     color: #ffffff;
-    line-height: 1.5; /* Line-height remains proportional */
-    margin-bottom: 2rem; /* Replaced from 2.083vw */
+    line-height: 1.5;
+    margin-bottom: 2rem;
 }
 
 /* Cards container */
 .service-cards-container {
     display: flex;
-    gap: 0.6rem; /* Replaced from 0.26vw */
-    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: centerg;
+    flex-wrap: nowrap; /* Ensure the items don't wrap */
     width: 100%;
-    padding: 0 1rem; /* Replaced from 1.563vw */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 0 1rem;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 /* Individual card styling */
 .service-card {
-    padding: 3.75rem 1.5rem; /* Replaced from 3.125vw 1.563vw */
+    padding: 3.75rem 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 25%; /* Percentage width remains unchanged */
+    width: 25%; /* Cards take 25% of the container width */
     max-width: auto;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* Replaced from 0 0.208vw 0.417vw */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-right: 1.625rem; /* Replaced from 2.604vw */
-    background-color: transparent; /* Set to transparent */
+    margin-right: 1.625rem;
+    background-color: transparent;
     transition: all 0.3s ease-in-out;
     margin-bottom: 5rem;
 }
@@ -75,13 +76,12 @@
     transform: scale(1);
 }
 
-/* Positioning logo on top of title */
 .service-card-header {
     display: flex;
-    flex-direction: column; /* Stack logo above the title */
+    flex-direction: column;
     align-items: center;
-    gap: 0.5rem; /* Reduced gap for closer positioning */
-    margin-bottom: 1rem; /* Replaced from 1.042vw */
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .service-card-logo {
@@ -89,26 +89,26 @@
     width: 200px;
     height: 200px;
     position: relative;
-    z-index: 2; /* Ensures the logo stays on top */
-    transition: transform 0.3s ease; /* Added transition for smooth enlargement */
+    z-index: 2;
+    transition: transform 0.3s ease;
 }
 
 .service-card-logo:hover {
-    transform: scale(1.2); /* Enlarge the logo on hover */
+    transform: scale(1.2);
 }
 
 .service-card-title {
-    font-size: 2rem; /* Replaced from 2vw */
+    font-size: 2rem;
     color: #b7b0ab;
     font-family: 'Lastica', 'sans-serif';
     position: relative;
-    z-index: 1; /* Ensures the title stays below the logo */
+    z-index: 1;
 }
 
 /* Card link styling */
 .card-link {
-    padding: 0.325rem; /* Replaced from 0.521vw */
-    border-radius: 1.25rem; /* Replaced from 1.563vw */
+    padding: 0.325rem;
+    border-radius: 1.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,7 +117,7 @@
     color: #f9f9f9;
     font-weight: bold;
     text-align: center;
-    margin-top: auto; /* Push the link to the bottom */
+    margin-top: auto;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
@@ -125,20 +125,48 @@
 .card-text {
     color: #f9f9f9;
     font-weight: bold;
-    font-size: 0.75rem; /* Replaced from 1vw */
+    font-size: 0.75rem;
 }
 
+/* Media query for mobile devices */
 @media (max-width: 480px) {
-    .Services-container{
-        padding: 1rem; /* Replaced from 3.125vw */
-        max-width: 100vw; /* Prevent width overflow */
-        overflow-x: hidden; 
-    }
-    .Services-container >.text-container> .title{
-        font-size: 2.5rem;
+    .Services-container {
+        padding: 1rem;
+        max-width: 100vw;
+        overflow-x: hidden;
     }
 
-    .service-card{
-        width: 90%;
+    .Services-container > .text-container > .title {
+        font-size: 2.5rem;
+        
+    }
+
+    .service-cards-container {
+        
+        flex-direction: row; /* Ensure cards are laid out horizontally */
+        gap: 1rem; /* Space between cards */
+        overflow-x: scroll; /* Enable horizontal scrolling */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+    }
+    .Services-container > .text-container {
+        
+        margin-top: 20%;
+    }
+    .service-card {
+        width: 80%; /* Cards take up more width in the carousel */
+        flex-shrink: 0; /* Prevent cards from shrinking */
+    }
+
+    .service-card-logo {
+        width: 150px; /* Adjust logo size */
+        height: 150px;
+    }
+
+    .service-card-title {
+        font-size: 1.5rem; /* Adjust title size */
+    }
+
+    .card-link {
+        font-size: 0.8rem; /* Adjust link text size */
     }
 }

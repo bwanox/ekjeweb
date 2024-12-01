@@ -4,6 +4,10 @@
     margin-bottom: 1.25rem; /* Replaced from 2vw */
     background: linear-gradient(145deg, #011238, #012441); /* Dark gradient */
 }
+.Servicepage-container{
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), #001f3f 100%);
+}
 
 /* Text container styling */
 .servicepage-text-container {
@@ -130,7 +134,7 @@
         max-width: 100vw; /* Prevent width overflow */
         overflow-x: hidden; 
     }
-
+    
 
     .text-content {
         text-align: center; /* Center-align text for mobile */
@@ -138,5 +142,127 @@
 
     .lead-text{
         font-size: 2.4rem;
+    }
+}
+
+.teamwork-page .text-container h1 {
+    color: #baaca1;
+    font-size: 4vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3vw;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+    text-align: center;
+}
+
+.teamwork-page .text-container p {
+    font-size: 1.8vw;
+    line-height: 1.8;
+    max-width: 800px;
+    color: white;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 1px 1px 6px rgb(19, 18, 18);
+}
+
+
+.teamwork-title {
+    text-align: center;
+    font-size: 3vw;
+    color: #ffffff;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 0.2vw;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.teamwork-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 50px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+/* Navigation Styles */
+.header-nav {
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: space-between; /* Space out items */
+    padding: 0 20px; /* Adjust padding as necessary */
+    list-style: none; /* Remove default list style */
+}
+
+.header-nav li {
+    flex: 1; /* Make each nav item take equal space */
+    text-align: center; /* Center-align text */
+}
+
+/* Service Box Styling */
+.service {
+    background-color: #ffffff;
+    color: #001f3f;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #baaca1;
+}
+
+.service:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-title {
+    font-size: 2vw;
+    color: #001f3f;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #baaca1;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.service-description {
+    font-size: 1.2vw;
+    line-height: 1.8;
+    color: #333333;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .teamwork-title {
+        font-size: 3rem;
+    }
+    
+    .service-title {
+        font-size: 4.5vw;
+    }
+    
+    .service-description {
+        font-size: 3.5vw;
+    }
+
+    .teamwork-container {
+        grid-template-columns: 1fr;
     }
 }

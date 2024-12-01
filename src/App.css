@@ -1,12 +1,12 @@
 /* Ensure the sections take full height */
-html, body {
+.first-page{
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden; /* Prevent unintended scrolling */
+  overflow: hidden; 
 }
 
-.app-container {
+.first-page {
   display: flex;
   flex-direction: column;
   height: 100vh; /* Ensure full height for the app container */

@@ -26,30 +26,37 @@ const Servicepage = () => {
                     <h2 className="secondary-text">Réalisez Vos Rêves Avec Nous</h2>
                 </div>
             </div>
-            <div className="service-page-cards-container">
-                <div className="service-page-card" onClick={() => openModal("Web development is the backbone of modern online businesses. It’s not just about creating a website; it’s about crafting digital experiences that captivate and engage.  I specialize in building interactive, visually stunning websites tailored to your unique needs. Whether you're looking for a sleek business portfolio, an engaging e-commerce platform, or a dynamic interactive site, I bring your vision to life.Beyond development, I offer hosting solutions and comprehensive website maintenance, ensuring your site runs smoothly, securely, and efficiently. From optimizing performance to implementing the latest features, I handle it all so you can focus on your business. Let’s transform your online presence into something extraordinary!")}>
-                    <h1 className="service-page-cardtitle">Web Development</h1>
+            <div className="teamwork-container">
+                <h1 className="teamwork-title">Our Team Services</h1>
+                
+                <div className="service">
+                    <h2 className="service-title">Mobile and Desktop App Development</h2>
+                    <p className="service-description">
+                        Our team specializes in building high-performance mobile and desktop applications tailored to meet your business needs. Whether you're targeting iOS, Android, or desktop platforms, we ensure a seamless user experience and intuitive designs.
+                    </p>
                 </div>
-                <div className="service-page-card" onClick={() => openModal('Software development focuses on building robust applications that power businesses.')}>
-                    <h1 className="service-page-cardtitle">Software Development</h1>
+                
+                <div className="service">
+                    <h2 className="service-title">Website Development</h2>
+                    <p className="service-description">
+                        We craft visually stunning, responsive, and functional websites that elevate your digital presence. Our websites are optimized for SEO, mobile-friendliness, and offer a perfect balance between aesthetics and performance.
+                    </p>
                 </div>
-                <div className="service-page-card" onClick={() => openModal('UI/UX design focuses on creating intuitive and engaging user experiences.')}>
-                    <h1 className="service-page-cardtitle">UI/UX Design</h1>
+                
+                <div className="service">
+                    <h2 className="service-title">Social Media Management</h2>
+                    <p className="service-description">
+                        Engage and grow your audience with our strategic social media management services. From content creation to engagement strategies, we manage your online presence, helping you build a stronger connection with your followers.
+                    </p>
                 </div>
-                <div className="service-page-card" onClick={() => openModal('Social media management helps brands reach and engage with their target audience.')}>
-                    <h1 className="service-page-cardtitle">Social Media Management</h1>
+                
+                <div className="service">
+                    <h2 className="service-title">Graphic Design</h2>
+                    <p className="service-description">
+                        Our creative team offers a wide range of graphic design services, including logo design, branding, and marketing materials. We focus on making your brand stand out with visually compelling designs that leave a lasting impression.
+                    </p>
                 </div>
             </div>
-
-            {/* Modal */}
-            {isModalOpen && (
-                <div className={`modal-overlay ${isModalOpen ? 'active' : ''}`}>
-                    <div className="modal">
-                        <button className="close-btn" onClick={closeModal}>X</button>
-                        <p>{modalContent}</p>
-                    </div>
-                </div>
-            )}
             <Footer/>
         </div>
     );

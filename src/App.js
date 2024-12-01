@@ -1,15 +1,15 @@
 import './App.css';
 import Header from './components/Header';
 import React, { useRef, useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router , Route, Routes } from 'react-router-dom';
 import Overview from './components/Overview';
 import AboutUs from './components/Aboutus';
 import Services from './components/services';
-import Achievements from './components/achievements';
-import Slidebar from './components/slidebar';
-import Contact from './components/Contact'
-import Footer from './components/Footer';
+import Contact from './components/Contact';
+import Teampage from './components/teampage';
 import Verticalscroll from './components/verticalscroll';
+import Gallery from './components/gallery';
+import Servicepage from './components/Servicepage';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("overview");
@@ -18,7 +18,7 @@ const App = () => {
     overview: useRef(null),
     aboutUs: useRef(null),
     services: useRef(null),
-    achievements: useRef(null),
+    gallery: useRef(null),
     contact: useRef(null),
   };
 
@@ -29,6 +29,12 @@ const App = () => {
   return (
     <Router>
       <div className="app-container">
+        <Routes>
+          <Route
+          path='/'
+          element={
+          <>
+          <div className="first-page">
         <Verticalscroll
           sectionRefs={sectionRefs}
           activeSection={activeSection}
@@ -59,10 +65,10 @@ const App = () => {
           </div>
           <div
             className="section"
-            ref={sectionRefs.achievements}
-            style={{ display: activeSection === "achievements" ? "block" : "none" }}
+            ref={sectionRefs.gallery}
+            style={{ display: activeSection === "gallery" ? "block" : "none" }}
           >
-            <Achievements />
+            <Gallery />
           </div>
           <div
             className="section"
@@ -72,8 +78,21 @@ const App = () => {
             <Contact />
           </div>
         </div>
+        </div>
+        </>
+        
+        }
+        
+        />
+        {/* Service Page (/services) */}
+        <Route path="/services" element={<Servicepage />} />
+
+        {/* Team Page (/about-team) */}
+        <Route path="/about" element={<Teampage />} />
+        </Routes>
       </div>
     </Router>
+    
   );
 };
 

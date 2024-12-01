@@ -1,196 +1,212 @@
-/* Main container */
-.aboutus-container {
+@keyframes stylishAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(100px) scale(0.8);
+      filter: blur(10px);
+    }
+    50% {
+      opacity: 0.7;
+      transform: translateY(30px) scale(1);
+      filter: blur(5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+  }
+  
+  .aboutus-container.visible {
+    animation: stylishAppear 1.5s ease-out forwards;
+  }
+  
+  .aboutus-container {
     display: flex;
     flex-direction: column;
-    padding: 1.875rem 3.125rem; /* Converted from 3vw 5vw */
-    max-width: auto; /* Converted from 1200px */
+    padding: 1.875rem 3.125rem;
     margin: 0 auto;
-}
-
-.aboutus-container > .text-container {
-    padding: 0 0.625rem; /* Converted from 1vw */
-    max-width: auto; /* Converted from 800px */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .text-container {
+    padding: 0 0.625rem;
     text-align: start;
-    margin-bottom: 1.25rem; /* Converted from 2.083vw */
-}
-
-/* Header styling */
-.title {
+    margin-bottom: 1.25rem;
+  }
+  
+  .title {
     font-family: 'Lastica', sans-serif;
-    font-size: 3.2rem; /* Converted from 6.25vw */
+    font-size: 3.2rem;
     font-weight: bold;
-    letter-spacing: 0.065rem; /* Converted from 0.104vw */
+    letter-spacing: 0.065rem;
     color: #ffffff;
-    margin-bottom: 0.325rem; /* Converted from 0.521vw */
-}
-
-.description {
-    font-size: 1.563rem; /* Converted from 2.5vw */
+    margin-bottom: 0.325rem;
+  }
+  
+  .description {
+    font-size: 1.563rem;
     color: #333;
-    line-height: 1.5; /* Line-height remains proportional */
-    margin-bottom: 1.25rem; /* Converted from 2.083vw */
-}
-
-/* Cards container */
-/* Cards container */
-.cards-container {
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+  }
+  
+  .cards-container {
     display: flex;
-    gap: 20%; /* Adjusted for a stylish gap between cards */
-    flex-wrap: nowrap; /* Prevent cards from wrapping to the next line */
-    justify-content: center; /* Center the cards in the row */
+    gap: 20%;
+    justify-content: center;
     padding-left: 0;
-}
-
-/* Individual card styling */
-.card {
-    border: 0.195rem solid #000;
-    border-radius: 50%; /* Make the card circular */
-    padding: 1.5rem; /* Adjusted padding for circular design */
+  }
+  
+  .card {
+    border: 0.195rem solid #ffffff;
+    border-radius: 10%;
+    padding: 0 2rem;
     display: flex;
+    margin-top: 10px;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Ensure content is centered */
+    justify-content: center;
     box-shadow: 0 0.13rem 0.26rem rgba(0, 0, 0, 0.1);
     text-align: center;
     margin-right: 1.625rem;
-    background-color: #f9f9f9;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     flex-grow: 1;
-    min-width: 12rem; /* Ensure cards stay at a reasonable size */
-    max-width: 18rem; /* Limit the maximum size of the cards */
-    height: 18rem; /* Make the card perfectly circular */
-    overflow: hidden; /* Hide any overflow content */
-}
-
-.card:hover {
+    min-width: 12rem;
+    max-width: 18rem;
+    height: 18rem;
+    overflow: hidden;
+  }
+  
+  .card:hover {
     background-color: #e3e3e3;
     transform: scale(1.05);
-}
-
-.card:active {
-    transform: scale(1); /* Reset scale on click */
-}
-
-/* Card header for image and years */
-.card-header {
+  }
+  
+  .card:active {
+    transform: scale(1);
+  }
+  
+  .card-header {
     display: flex;
     align-items: center;
-    gap: 1rem;
     margin-bottom: 0.5rem;
-    opacity: 1; /* Initially visible */
-    transition: opacity 1s ease-in-out; /* Smooth transition */
-}
-
-/* Card image styling */
-.card-image {
-    width: 6rem; /* Adjusted image size */
-    height: 6rem; /* Ensure it's a perfect circle */
-    border-radius: 50%; /* Make the image circular */
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    flex-direction: column;
+  }
+  
+  .card-image {
+    width: 20rem;
+    height: 10rem;
+    border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 0.5rem;
-    opacity: 1; /* Initially visible */
-    transition: opacity 1s ease-in-out; /* Smooth transition */
-}
-
-/* Card years section */
-.card-years {
+    margin-bottom: 0rem;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .card-years {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    color: #000;
-    padding: 0.325rem;
-    opacity: 1; /* Initially visible */
-    transition: opacity 1s ease-in-out; /* Smooth transition */
-}
-
-.card-years-number {
-    font-size: 2.5rem; /* Adjusted size */
+    align-items: start;
+    color: #ffffff;
+    padding-left: 6rem;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .card-years-number {
+    font-size: 3rem;
     font-weight: bold;
-}
-
-.card-years-text {
+  }
+  
+  .card-years-text {
     font-size: 1rem;
     margin-top: 0.5rem;
-}
-
-/* Card description styling */
-.card-description {
+  }
+  
+  .card-description {
     font-size: 1.2rem;
-    color: #333;
+    color: #3f3f3f;
     line-height: 1.4;
-    opacity: 0; /* Initially hide description */
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition for opacity and transform */
-    position: absolute; /* Position it over the image */
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    position: absolute;
     bottom: 0.5rem;
     left: 0;
     right: 0;
     padding: 0 0.5rem;
-    transform: translateY(20px); /* Initially position the description below */
-}
-
-/* On hover: Animate image, number/years disappearing and description appearing */
-.card:hover .card-description {
-    opacity: 1; /* Show description */
-    transform: translateY(0); /* Move the description into place */
-}
-
-.card:hover .card-header,
-.card:hover .card-image,
-.card:hover .card-years {
-    opacity: 0; /* Hide image, number, and years */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+    transform: translateY(20px);
+  }
+  
+  .card:hover .card-description {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .card:hover .card-header,
+  .card:hover .card-image,
+  .card:hover .card-years {
+    opacity: 0;
+  }
+  
+  @media (max-width: 768px) {
     .cards-container {
-        flex-direction: column;
-        align-items: center;
+      flex-direction: column;
+      align-items: center;
+      width: 90%; /* Ensure the container uses full width */
+      padding: 0 1rem; /* Add some padding to prevent cards from touching edges */
     }
-
+  
     .card {
-        margin-bottom: 1.5rem; /* Space between vertically stacked cards */
-        min-width: 12rem;
-        height: 16rem;
-        max-width: 14rem; /* Adjust for smaller screen sizes */
+      margin-bottom: 1.5rem;
+      width: 100%; /* Ensure the card uses full width of its container */
+      max-width: 14rem; /* Limit the maximum size */
+      height: auto; /* Adjust height according to content */
+      flex-grow: 0; /* Prevent cards from stretching */
+      box-sizing: border-box; /* Ensure padding doesn't affect width */
     }
-
+  
     .card-image {
-        width: 5rem;
-        height: 5rem;
+      width: 5rem;
+      height: 5rem;
     }
-
+  
     .card-years-number {
-        font-size: 2rem;
+      font-size: 2rem;
     }
-
+  
     .card-years-text {
-        font-size: 0.9rem;
+      font-size: 0.9rem;
     }
-
+  
     .card-description {
-        font-size: 1rem; /* Adjust description size for mobile */
+      font-size: 1rem;
     }
-}
-
-@media (max-width: 480px) {
-    .card-years-number{
-        font-size: 2.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    .card-years-number {
+      font-size: 2.5rem;
     }
-    .card-image{
-        width: 10rem;
-
+  
+    .card-image {
+      width: 10rem;
+      height: 10rem; /* Make sure it remains a perfect circle */
     }
+  
     .title {
-        font-family: 'Lastica', sans-serif;
-        font-size: 1.5rem; /* Converted from 6.25vw */
-        font-weight: bold;
-        letter-spacing: 0.065rem; /* Converted from 0.104vw */
-        color: #000;
-        margin-bottom: 0.325rem; /* Converted from 0.521vw */
+      font-size: 1.5rem;
+      color: #ffffff;
     }
-    .card{
-        width: 19rem;
+  
+    .card {
+      width: 100%; /* Full width for smaller screens */
+      max-width: 16rem; /* Set a reasonable max-width */
+      height: auto; /* Let height adjust based on content */
     }
-    
-}
+  }
+  

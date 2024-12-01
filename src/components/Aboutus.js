@@ -1,14 +1,44 @@
-import React from "react";
 import "../styles/AboutUs.css";
-import ensaklogo from '../assets/ensaklogo.png';
+import ensaklogo from '../assets/ensaklogo.svg';
+import React, { useState, useEffect,useRef } from 'react';
+
 
 const AboutUs = () => {
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            },
+            {
+                threshold: 0.1, // Trigger when 10% of the container is visible
+            }
+        );
+    
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+        }
+    
+        return () => {
+            if (containerRef.current) {
+                observer.unobserve(containerRef.current);
+            }
+        };
+    }, []);
+    
     const handleCardClick = (url) => {
         window.location.href = url;  
     };
 
+    
+    
     return (
-        <div className="aboutus-container">
+        <div  className="aboutus-container" ref={containerRef}>
             <div className="text-container">
                 <h1 className="title">Decouvrez-nous</h1>
                 <p className="description">
