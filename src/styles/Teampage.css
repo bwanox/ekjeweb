@@ -10,7 +10,10 @@
     text-align: center;
     margin-bottom: 3vw;
 }
-.Teampage-container{background-color: white;}
+.Teampage-container{
+    background-color: white;
+    overflow-x: hidden;
+}
 
 .lead-text {
     font-size: 4vw;
@@ -135,6 +138,13 @@
     .teampage-cards-container {
         gap: 1.5vw;
         padding: 1.5vw;
+    }
+    .lead-text {
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: 'lastica','sans-cheriff';
+        color: rgba(255, 255, 255, 0.6);
+        letter-spacing: 0.5vw;
     }
 
     .teampage-card {
