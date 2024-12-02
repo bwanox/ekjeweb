@@ -13,18 +13,31 @@ import Servicepage from './components/Servicepage';
 import LoadingComponent from './components/Loading'; // Import the loading component
 
 const isiOS = (() => {
+  // Check if userAgentData is available (modern browsers)
+  if (navigator.userAgentData) {
+    return navigator.userAgentData.platform === 'iOS'; // This directly checks for iOS platform
+  }
+
+  // Fallback for older browsers (using userAgent string)
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  const isTouchDevice = navigator.maxTouchPoints && navigator.maxTouchPoints > 1;
+  
   return /iPad|iPhone|iPod/.test(userAgent) || 
-         (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+         (navigator.platform === 'MacIntel' && isTouchDevice);
 })();
 
-if (isiOS) {
-  document.documentElement.style.setProperty('--button-width', '1000%');
-  document.documentElement.style.setProperty('--button-height', '1000%');
-} else {
-  document.documentElement.style.setProperty('--button-width', '30px');
-  document.documentElement.style.setProperty('--button-height', '30px');
+// Apply styles to buttons based on the detected platform
+const button = document.querySelector('button');
+if (button) {
+  if (isiOS) {
+    button.style.width = '1000%';
+    button.style.height = '1000%';
+  } else {
+    button.style.width = '30px';
+    button.style.height = '30px';
+  }
 }
+
 
 
 const App = () => {
