@@ -21,6 +21,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
   justify-content: center;
   transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
@@ -94,6 +95,4 @@
     z-index: 1000;
   }
 }
-.scroll-button {
-  transform: translateZ(0);
-}
+
