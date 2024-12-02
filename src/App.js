@@ -12,7 +12,11 @@ import Gallery from './components/gallery';
 import Servicepage from './components/Servicepage';
 import LoadingComponent from './components/Loading'; // Import the loading component
 
-const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+const isiOS = (() => {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  return /iPad|iPhone|iPod/.test(userAgent) || 
+         (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+})();
 
 if (isiOS) {
   document.documentElement.style.setProperty('--button-width', '1000%');
@@ -21,6 +25,7 @@ if (isiOS) {
   document.documentElement.style.setProperty('--button-width', '30px');
   document.documentElement.style.setProperty('--button-height', '30px');
 }
+
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true); // State to manage loading
