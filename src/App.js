@@ -16,7 +16,7 @@ const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
 if (isiOS) {
   document.documentElement.style.setProperty('--button-width', '30px');
-  document.documentElement.style.setProperty('--button-height', '30px');
+  document.documentElement.style.setProperty('--button-height', 'auto');
 } else {
   document.documentElement.style.setProperty('--button-width', '30px');
   document.documentElement.style.setProperty('--button-height', '30px');
