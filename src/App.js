@@ -12,32 +12,32 @@ import Gallery from './components/gallery';
 import Servicepage from './components/Servicepage';
 import LoadingComponent from './components/Loading'; // Import the loading component
 
-const isiOS = (() => {
-  // Check if userAgentData is available (modern browsers)
-  if (navigator.userAgentData) {
-    return navigator.userAgentData.platform === 'iOS'; // This directly checks for iOS platform
-  }
-
-  // Fallback for older browsers (using userAgent string)
+// Detect iOS
+const isIOS = (() => {
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-  const isTouchDevice = navigator.maxTouchPoints && navigator.maxTouchPoints > 1;
-  
-  return /iPad|iPhone|iPod/.test(userAgent) || 
-         (navigator.platform === 'MacIntel' && isTouchDevice);
+  const isTouchMac = navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+  return /iPad|iPhone|iPod/.test(userAgent) || isTouchMac;
 })();
 
-// Apply styles to buttons based on the detected platform
-const button = document.querySelector('button');
-if (button) {
-  if (isiOS) {
-    button.style.width = '1000%';
-    button.style.height = '1000%';
-  } else {
-    button.style.width = '30px';
-    button.style.height = '30px';
-  }
-}
+// CSS Variable Keys
+const CSS_VAR_KEYS = {
+  BUTTON_WIDTH: '--button-width',
+  BUTTON_HEIGHT: '--button-height',
+};
 
+// Apply Styles
+const setButtonStyles = (isIOS) => {
+  const rootStyle = document.documentElement.style;
+  if (isIOS) {
+    rootStyle.setProperty(CSS_VAR_KEYS.BUTTON_WIDTH, '1000%');
+    rootStyle.setProperty(CSS_VAR_KEYS.BUTTON_HEIGHT, '1000%');
+  } else {
+    rootStyle.setProperty(CSS_VAR_KEYS.BUTTON_WIDTH, '30px');
+    rootStyle.setProperty(CSS_VAR_KEYS.BUTTON_HEIGHT, '30px');
+  }
+};
+
+setButtonStyles(isIOS);
 
 
 const App = () => {
