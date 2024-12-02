@@ -15,8 +15,8 @@ import LoadingComponent from './components/Loading'; // Import the loading compo
 const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
 if (isiOS) {
-  document.documentElement.style.setProperty('--button-width', '20%');
-  document.documentElement.style.setProperty('--button-height', '20%');
+  document.documentElement.style.setProperty('--button-width', '1000%');
+  document.documentElement.style.setProperty('--button-height', '1000%');
 } else {
   document.documentElement.style.setProperty('--button-width', '30px');
   document.documentElement.style.setProperty('--button-height', '30px');
