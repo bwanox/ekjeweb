@@ -52,8 +52,6 @@ header {
 /* Mobile-specific styles */
 @media (max-width: 768px) {
   .first-page {
-    background-image: url('./assets/background-gif-phone.gif');
-    height: auto; /* Allow height to expand */
     overflow-y: auto; /* Enable scrolling */
   }
 
