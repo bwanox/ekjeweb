@@ -78,8 +78,8 @@
     top: 30%;
   }
   .scroll-button{
-    width: 20px;
-    height: 20px;
+    width: var(--button-width);
+    height: var(--button-height);
   }
   .scroll-icon{
     width: 30px;
