@@ -12,6 +12,16 @@ import Gallery from './components/gallery';
 import Servicepage from './components/Servicepage';
 import LoadingComponent from './components/Loading'; // Import the loading component
 
+const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+if (isiOS) {
+  document.documentElement.style.setProperty('--button-width', '30px');
+  document.documentElement.style.setProperty('--button-height', '30px');
+} else {
+  document.documentElement.style.setProperty('--button-width', '30px');
+  document.documentElement.style.setProperty('--button-height', '30px');
+}
+
 const App = () => {
   const [isLoading, setIsLoading] = useState(true); // State to manage loading
   const [activeSection, setActiveSection] = useState("overview");
