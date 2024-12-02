@@ -29,7 +29,7 @@ const Verticalscroll = ({ sectionRefs, activeSection, onSectionChange }) => {
 
     const touchMoveY = event.touches[0].clientY;
     const deltaY = startTouchY - touchMoveY;
-    const scrollThreshold = 200; 
+    const scrollThreshold = 100; 
 
     if (Math.abs(deltaY) > scrollThreshold) {
       if (deltaY > 0) {
