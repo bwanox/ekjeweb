@@ -30,7 +30,7 @@ const setButtonStyles = (isIOS) => {
   const rootStyle = document.documentElement.style;
   if (isIOS) {
     rootStyle.setProperty(CSS_VAR_KEYS.BUTTON_WIDTH, '30%');
-    rootStyle.setProperty(CSS_VAR_KEYS.BUTTON_HEIGHT, 'auto');
+    rootStyle.setProperty(CSS_VAR_KEYS.BUTTON_HEIGHT, '30%');
   } else {
     rootStyle.setProperty(CSS_VAR_KEYS.BUTTON_WIDTH, '30px');
     rootStyle.setProperty(CSS_VAR_KEYS.BUTTON_HEIGHT, '30px');
