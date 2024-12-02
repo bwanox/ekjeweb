@@ -42,6 +42,7 @@ setButtonStyles(isIOS);
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true); // State to manage loading
+  const [isMobile, setIsMobile] = useState(false); // State to manage mobile view
   const [activeSection, setActiveSection] = useState("overview");
 
   const sectionRefs = {
@@ -57,29 +58,50 @@ const App = () => {
   };
 
   useEffect(() => {
-    // Preload the background image
-    const preloadImage = (src) => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Mobile view for screen width <= 768px
+    };
+
+    // Initial check and add event listener for window resize
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize); // Cleanup on unmount
+    };
+  }, []);
+
+  useEffect(() => {
+    const preloadGif = (src) => {
       return new Promise((resolve, reject) => {
         const img = new Image();
         img.src = src;
-        img.onload = resolve;
-        img.onerror = reject;
+        img.onload = () => {
+          console.log(`GIF successfully loaded: ${src}`);
+          resolve();
+        };
+        img.onerror = (error) => {
+          console.error(`Failed to load GIF: ${src}`, error);
+          reject(error);
+        };
       });
     };
-
-    // Path to your background image
-    const backgroundImageSrc = './assets/background-gif.gif';
-
-    // Wait for the background image to load
-    preloadImage(backgroundImageSrc)
+  
+    const gifSrc = isMobile 
+      ? './assets/background-gif-phone.gif' // Mobile version of the GIF
+      : './assets/background-gif.gif'; // Desktop version of the GIF
+  
+    preloadGif(gifSrc)
       .then(() => {
-        setIsLoading(false); // Set loading to false once the image is loaded
+        setIsLoading(false); // Stop loading after the appropriate GIF is fully loaded
       })
-      .catch((error) => {
-        console.error('Failed to load background image:', error);
-        setIsLoading(false); // Still proceed if there's an error
+      .catch(() => {
+        setIsLoading(false); // Handle error by hiding the loader
       });
-  }, []);
+  }, [isMobile]);
+  
+  
+  
 
   if (isLoading) {
     return <LoadingComponent />; // Show the loading screen while the app is loading
@@ -87,24 +109,26 @@ const App = () => {
 
   return (
     <Router>
-      <div className="app-con tainer">
+      <div className="app-container">
         <Routes>
           <Route
             path="/"
             element={
               <div className="first-page">
-                <Verticalscroll
-                  sectionRefs={sectionRefs}
-                  activeSection={activeSection}
-                  onSectionChange={handleSectionChange}
-                />
+                {!isMobile && (
+                  <Verticalscroll
+                    sectionRefs={sectionRefs}
+                    activeSection={activeSection}
+                    onSectionChange={handleSectionChange}
+                  />
+                )}
                 <Header />
                 <div className="sections-container">
                   <div
                     className="section"
                     ref={sectionRefs.overview}
                     style={{
-                      display: activeSection === "overview" ? "block" : "none",
+                      display: isMobile || activeSection === "overview" ? "block" : "none",
                     }}
                   >
                     <Overview />
@@ -113,7 +137,7 @@ const App = () => {
                     className="section"
                     ref={sectionRefs.aboutUs}
                     style={{
-                      display: activeSection === "aboutUs" ? "block" : "none",
+                      display: isMobile || activeSection === "aboutUs" ? "block" : "none",
                     }}
                   >
                     <AboutUs />
@@ -122,7 +146,7 @@ const App = () => {
                     className="section"
                     ref={sectionRefs.services}
                     style={{
-                      display: activeSection === "services" ? "block" : "none",
+                      display: isMobile || activeSection === "services" ? "block" : "none",
                     }}
                   >
                     <Services />
@@ -131,7 +155,7 @@ const App = () => {
                     className="section"
                     ref={sectionRefs.gallery}
                     style={{
-                      display: activeSection === "gallery" ? "block" : "none",
+                      display: isMobile || activeSection === "gallery" ? "block" : "none",
                     }}
                   >
                     <Gallery />
@@ -140,7 +164,7 @@ const App = () => {
                     className="section"
                     ref={sectionRefs.contact}
                     style={{
-                      display: activeSection === "contact" ? "block" : "none",
+                      display: isMobile || activeSection === "contact" ? "block" : "none",
                     }}
                   >
                     <Contact />
