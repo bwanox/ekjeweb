@@ -63,6 +63,6 @@ header {
 
   .section {
     display: block; /* Always show sections */
-    margin-bottom: 20px; /* Add spacing between sections */
+    margin-top: 20px; /* Add spacing between sections */
   }
 }

@@ -11,6 +11,7 @@ import Verticalscroll from './components/verticalscroll';
 import Gallery from './components/gallery';
 import Servicepage from './components/Servicepage';
 import LoadingComponent from './components/Loading'; // Import the loading component
+import Footer from './components/Footer';
 
 // Detect iOS
 const isIOS = (() => {
@@ -170,6 +171,14 @@ const App = () => {
                     <Contact />
                   </div>
                 </div>
+                <div
+                    className="section"
+                    style={{
+                      display: isMobile || activeSection === "footer" ? "block" : "none",
+                    }}
+                  >
+                    <Footer />
+                  </div>
               </div>
             }
           />

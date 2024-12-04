@@ -143,10 +143,9 @@
 
     .service-cards-container {
         
-        flex-direction: row; /* Ensure cards are laid out horizontally */
+        flex-direction: column; /* Ensure cards are laid out horizontally */
         gap: 1rem; /* Space between cards */
-        overflow-x: scroll; /* Enable horizontal scrolling */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+       
     }
     .Services-container > .text-container {
         
